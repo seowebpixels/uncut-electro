@@ -56,6 +56,15 @@ button,
   transition: all 0.2s ease-in-out;
 }
 
+/* Force all text, spans, and icons inside buttons to inherit black text */
+button *, 
+.btn *, 
+.hero-btn *,
+a.btn *,
+a.hero-btn * {
+  color: var(--accent-text) !important;
+}
+
 /* Surround Border Effect on Hover */
 button:hover, 
 .btn:hover, 
