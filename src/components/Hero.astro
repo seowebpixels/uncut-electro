@@ -1,32 +1,54 @@
 ---
-// src/components/Hero.astro
+// src/components/Hero.astro (Tailwind CSS Version)
 ---
 
-<section class="hero" id="home">
-  <div class="hero-container">
-    <div class="hero-content">
-      <h1>UNCUT ELECTRO-MECHANICAL ENGINEERING</h1>
-      <p>Reliable, precision-driven electro-mechanical solutions powering industrial excellence.</p>
-      
-      <!-- H2 Section -->
-      <div class="hero-subheading-group">
-        <h2>Expert Power Systems & Industrial Engineering</h2>
-        <p>Providing high-voltage maintenance, transformer installation, and critical infrastructure support for commercial and industrial sectors.</p>
+<section class="bg-[#222222] text-white py-16 px-8" id="home">
+  <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
+    
+    <div class="contents md:block md:flex-1 md:min-w-[300px]">
+      <!-- Header Group -->
+      <div class="order-1">
+        <h1 class="text-4xl font-extrabold mb-4 leading-tight uppercase">
+          UNCUT ELECTRO-MECHANICAL ENGINEERING
+        </h1>
+        <p class="text-lg text-[#cccccc] mb-5">
+          Reliable, precision-driven electro-mechanical solutions powering industrial excellence.
+        </p>
       </div>
 
-      <!-- Added H3 Section -->
-      <div class="hero-h3-group">
-        <h3>24/7 Rapid Response & Certified Compliance</h3>
-        <p>Licensed technicians deployed instantly across industrial sites to minimize downtime and eliminate electrical hazards.</p>
+      <!-- H2 Group -->
+      <div class="order-3 mb-5">
+        <h2 class="text-xl font-bold text-[#FF7F00] mb-1 uppercase">
+          Expert Power Systems & Industrial Engineering
+        </h2>
+        <p class="text-lg text-[#cccccc]">
+          Providing high-voltage maintenance, transformer installation, and critical infrastructure support for commercial and industrial sectors.
+        </p>
       </div>
 
-      <div class="hero-buttons">
-        <a href="tel:0795059510" class="btn-primary">Emergency Callout</a>
-        <a href="#services" class="btn-secondary">Our Services</a>
+      <!-- H3 Group -->
+      <div class="order-4 mb-7">
+        <h3 class="text-base font-semibold text-white mb-1 uppercase">
+          24/7 Rapid Response & Certified Compliance
+        </h3>
+        <p class="text-lg text-[#cccccc]">
+          Licensed technicians deployed instantly across industrial sites to minimize downtime and eliminate electrical hazards.
+        </p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="order-5 flex gap-4 justify-center md:justify-start">
+        <a href="tel:0795059510" class="bg-[#FF7F00] text-black px-6 py-3 font-bold rounded uppercase no-underline">
+          Emergency Callout
+        </a>
+        <a href="#services" class="bg-transparent text-white border-2 border-white px-6 py-3 font-bold rounded uppercase no-underline">
+          Our Services
+        </a>
       </div>
     </div>
-    
-    <div class="hero-image-container">
+
+    <!-- Image Container -->
+    <div class="order-2 md:order-none w-full md:flex-1 md:min-w-[300px] mb-6 md:mb-0">
       <img 
         src="/high-voltage-transformer.avif" 
         alt="High-Voltage Transformer - Uncut Electro-Mechanical Engineering" 
@@ -34,121 +56,9 @@
         height="428"
         fetchpriority="high"
         loading="eager"
-        class="hero-img"
+        class="w-full h-auto block rounded-lg border-2 border-[#FF7F00]"
       />
     </div>
+
   </div>
 </section>
-
-<style>
-  .hero {
-    background-color: #222222;
-    color: #ffffff;
-    padding: 4rem 2rem;
-  }
-
-  .hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 3rem;
-    flex-wrap: wrap;
-  }
-
-  .hero-content {
-    flex: 1;
-    min-width: 300px;
-  }
-
-  .hero-content h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-    text-transform: uppercase;
-  }
-
-  .hero-content p {
-    font-size: 1.1rem;
-    margin-bottom: 1.25rem;
-    color: #cccccc;
-  }
-
-  /* Styling for the H2 subsection */
-  .hero-subheading-group {
-    margin-bottom: 1.25rem;
-  }
-
-  .hero-content h2 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #FF7F00; /* Brand orange accent */
-    margin-bottom: 0.4rem;
-    text-transform: uppercase;
-  }
-
-  /* Styling for the H3 subsection */
-  .hero-h3-group {
-    margin-bottom: 1.75rem;
-  }
-
-  .hero-content h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 0.3rem;
-    text-transform: uppercase;
-  }
-
-  .hero-buttons {
-    display: flex;
-    gap: 1rem;
-  }
-
-  .btn-primary {
-    background-color: #FF7F00;
-    color: #000000;
-    padding: 0.75rem 1.5rem;
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 4px;
-    text-transform: uppercase;
-  }
-
-  .btn-secondary {
-    background-color: transparent;
-    color: #ffffff;
-    border: 2px solid #ffffff;
-    padding: 0.75rem 1.5rem;
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 4px;
-    text-transform: uppercase;
-  }
-
-  .hero-image-container {
-    flex: 1;
-    min-width: 300px;
-  }
-
-  .hero-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    opacity: 1;
-    border-radius: 8px;
-    border: 2px solid #FF7F00;
-  }
-
-  @media (max-width: 768px) {
-    .hero-container {
-      flex-direction: column;
-      text-align: center;
-    }
-    .hero-buttons {
-      justify-content: center;
-    }
-  }
-</style>
