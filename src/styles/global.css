@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   1. MASTER DESIGN TOKENS (Change values here to update the ENTIRE site)
+   1. MASTER DESIGN TOKENS
    ========================================================================== */
 :root {
   /* Site Colors */
@@ -13,16 +13,18 @@
   /* Brand / Accent Colors */
   --accent-color: #FF7F00;        /* Primary accent color */
   --accent-hover: #e06f00;        /* Button fill color on hover */
-  --accent-text: #000000;         /* Text inside primary buttons */
+  --accent-text: #000000;         /* Text inside primary buttons (Black) */
   --border-hover: #FF7F00;        /* Hover surround border color */
 
   /* Button Dimensions & Styling */
+  --button-height-desktop: 48px;  /* Desktop button height */
+  --button-height-mobile: 44px;   /* Mobile button height */
   --button-mobile-min-width: 160px;
   --button-radius: 8px;
 }
 
 /* ==========================================================================
-   2. BASE PAGE STYLES (Overrides page backgrounds & text globally)
+   2. BASE PAGE STYLES
    ========================================================================== */
 html, 
 body, 
@@ -43,48 +45,78 @@ a {
 }
 
 /* ==========================================================================
-   3. GLOBAL BUTTON STYLES & HOVER OVERRIDES
+   3. GLOBAL BUTTON STYLES (DESKTOP DEFAULT)
    ========================================================================== */
+
+/* Target all buttons, callouts, and link-buttons */
 button, 
 .btn, 
-.hero-btn {
+.hero-btn,
+a.btn,
+a.hero-btn,
+[role="button"],
+[class*="btn"],
+[class*="button"],
+[class*="callout"],
+[class*="emergency"] {
   background-color: var(--accent-color) !important;
   color: var(--accent-text) !important;
   border-radius: var(--button-radius) !important;
-  border: 2px solid transparent !important; /* Prepares border for hover effect */
+  border: 2px solid transparent !important;
+  height: var(--button-height-desktop) !important; /* Uses Desktop Height Variable */
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
 
-/* Force all text, spans, and icons inside buttons to inherit black text */
+/* Force all text, spans, paragraphs, and icons inside buttons to render in BLACK */
 button *, 
 .btn *, 
 .hero-btn *,
 a.btn *,
-a.hero-btn * {
+a.hero-btn *,
+[role="button"] *,
+[class*="btn"] *,
+[class*="button"] *,
+[class*="callout"] *,
+[class*="emergency"] * {
   color: var(--accent-text) !important;
+  fill: var(--accent-text) !important;
 }
 
 /* Surround Border Effect on Hover */
 button:hover, 
 .btn:hover, 
-.hero-btn:hover {
+.hero-btn:hover,
+a.btn:hover,
+a.hero-btn:hover,
+[class*="callout"]:hover,
+[class*="emergency"]:hover {
   background-color: var(--accent-hover) !important;
-  border-color: var(--border-hover) !important; /* Enforces #FF7F00 border on hover */
+  border-color: var(--border-hover) !important;
 }
 
 /* ==========================================================================
-   4. RESPONSIVE MOBILE FIXES
+   4. RESPONSIVE MOBILE FIXES (MOBILE OVERRIDES)
    ========================================================================== */
 @media (max-width: 768px) {
-  /* Mobile Button Width & Sizing Overrides */
   button, 
   .btn, 
-  .hero-btn {
+  .hero-btn,
+  a.btn,
+  a.hero-btn,
+  [role="button"],
+  [class*="btn"],
+  [class*="button"],
+  [class*="callout"],
+  [class*="emergency"] {
     flex-shrink: 0 !important;
     width: auto !important;
     min-width: var(--button-mobile-min-width) !important;
-    padding: 12px 24px !important;
-    text-align: center !important;
+    height: var(--button-height-mobile) !important; /* Uses Mobile Height Variable */
   }
 }
