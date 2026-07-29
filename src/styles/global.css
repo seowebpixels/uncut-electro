@@ -44,16 +44,15 @@ a {
 }
 
 /* ==========================================================================
-   3. HERO & GLOBAL BUTTON OVERRIDES (UNBEATABLE ID SPECIFICITY)
+   3. GLOBAL BUTTON STYLES & ASTRO SCOPED OVERRIDES
    ========================================================================== */
 
-/* Shared Layout Rules */
+/* Base Layout for All Buttons */
 button,
 .btn,
 .btn-primary,
 .btn-secondary,
-.hero-buttons a,
-#home .hero-buttons a {
+.hero-buttons a {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -66,49 +65,52 @@ button,
   transition: all 0.2s ease-in-out !important;
 }
 
-/* --------------------------------------------------------------------------
-   PRIMARY BUTTON (Emergency Callout - Solid Orange Background + SOLID BLACK TEXT)
-   -------------------------------------------------------------------------- */
-#home .btn-primary,
-#home a.btn-primary,
-html body #home .hero-buttons a.btn-primary {
+/* --- ASTRO DATA-ATTRIBUTE SPECIFIC OVERRIDES --- */
+
+/* Primary Button (Emergency Callout) - Force Background and Text */
+.btn-primary,
+a.btn-primary,
+[data-astro-cid-ge2uvauf].btn-primary,
+a[data-astro-cid-ge2uvauf].btn-primary {
   background-color: var(--accent-color) !important;
   color: #000000 !important;
   border: 2px solid var(--accent-color) !important;
 }
 
-/* Target all child text nodes inside Emergency Callout */
-#home .btn-primary *,
-#home a.btn-primary *,
-html body #home .hero-buttons a.btn-primary * {
+/* Force inner text nodes/spans to solid black */
+.btn-primary *,
+a.btn-primary *,
+[data-astro-cid-ge2uvauf].btn-primary *,
+a[data-astro-cid-ge2uvauf].btn-primary * {
   color: #000000 !important;
   -webkit-text-fill-color: #000000 !important;
 }
 
-/* Hover state */
-#home .btn-primary:hover,
-#home a.btn-primary:hover,
-html body #home .hero-buttons a.btn-primary:hover {
+/* Primary Button Hover State */
+.btn-primary:hover,
+a.btn-primary:hover,
+[data-astro-cid-ge2uvauf].btn-primary:hover,
+a[data-astro-cid-ge2uvauf].btn-primary:hover {
   background-color: var(--accent-hover) !important;
   border-color: var(--border-hover) !important;
   color: #000000 !important;
 }
 
-/* --------------------------------------------------------------------------
-   SECONDARY BUTTON (Our Services - Transparent + Orange Text/Border)
-   -------------------------------------------------------------------------- */
-#home .btn-secondary,
-#home a.btn-secondary,
-html body #home .hero-buttons a.btn-secondary {
+/* Secondary Button (Our Services) */
+.btn-secondary,
+a.btn-secondary,
+[data-astro-cid-ge2uvauf].btn-secondary,
+a[data-astro-cid-ge2uvauf].btn-secondary {
   background-color: transparent !important;
   color: var(--accent-color) !important;
   border: 2px solid var(--accent-color) !important;
 }
 
-/* Hover state */
-#home .btn-secondary:hover,
-#home a.btn-secondary:hover,
-html body #home .hero-buttons a.btn-secondary:hover {
+/* Secondary Button Hover State */
+.btn-secondary:hover,
+a.btn-secondary:hover,
+[data-astro-cid-ge2uvauf].btn-secondary:hover,
+a[data-astro-cid-ge2uvauf].btn-secondary:hover {
   background-color: var(--accent-color) !important;
   color: #000000 !important;
 }
@@ -121,8 +123,7 @@ html body #home .hero-buttons a.btn-secondary:hover {
   .btn,
   .btn-primary,
   .btn-secondary,
-  .hero-buttons a,
-  #home .hero-buttons a {
+  .hero-buttons a {
     flex-shrink: 0 !important;
     width: auto !important;
     min-width: var(--button-mobile-min-width) !important;
