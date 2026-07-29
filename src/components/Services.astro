@@ -69,7 +69,7 @@ const capabilities = [
     </div>
 
     <!-- Additional Capabilities Bullet List Section -->
-    <div class="additional-capabilities">
+    <div class="additional-capabilities" tabindex="0">
       <h3>Specialized Industrial Capabilities</h3>
       <ul class="capabilities-list">
         {capabilities.map(item => (
@@ -83,13 +83,23 @@ const capabilities = [
 </section>
 
 <script>
-  // Adds an interactive click listener to toggle the orange border state
-  document.querySelectorAll('.service-card').forEach(card => {
-    card.addEventListener('click', () => {
-      // Optional: remove highlight from other cards so only one stays highlighted at a time
-      document.querySelectorAll('.service-card').forEach(c => c.classList.remove('is-clicked'));
-      card.classList.toggle('is-clicked');
+  // Adds interactive click listeners for both service cards and additional capabilities box
+  document.addEventListener('DOMContentLoaded', () => {
+    // Core services cards click logic
+    document.querySelectorAll('.service-card').forEach(card => {
+      card.addEventListener('click', () => {
+        document.querySelectorAll('.service-card').forEach(c => c.classList.remove('is-clicked'));
+        card.classList.toggle('is-clicked');
+      });
     });
+
+    // Additional capabilities box click logic
+    const additionalBox = document.querySelector('.additional-capabilities');
+    if (additionalBox) {
+      additionalBox.addEventListener('click', () => {
+        additionalBox.classList.toggle('selected');
+      });
+    }
   });
 </script>
 
@@ -192,13 +202,14 @@ const capabilities = [
     padding: 2.5rem;
     border-radius: 6px;
     text-align: left;
+    cursor: pointer;
     transition: border-color 0.2s ease;
   }
 
-  /* Highlights with a thin orange border when clicked or focused */
+  /* Highlights with a thin orange border when clicked */
   .additional-capabilities.selected {
     border: 1px solid #FF7F00;
-    outline: none; /* Removes the default browser focus outline */
+    outline: none;
   }
 
   .additional-capabilities h3 {
@@ -258,19 +269,5 @@ const capabilities = [
     .additional-capabilities {
       padding: 1.5rem;
     }
-
-    <script>
-  // Wait for the page to load
-  document.addEventListener('DOMContentLoaded', () => {
-    // Find all elements with this class
-    const boxes = document.querySelectorAll('.additional-capabilities');
-    
-    boxes.forEach(box => {
-      box.addEventListener('click', () => {
-        // Toggles the 'selected' class on and off when clicked
-        box.classList.toggle('selected');
-      });
-    });
-  });
-</script>
+  }
 </style>
