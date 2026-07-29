@@ -189,10 +189,17 @@ const capabilities = [
   .additional-capabilities {
     background-color: #222222;
     border: 1px solid #333333;
-    border-left: 4px solid #FF7F00;
     padding: 2.5rem;
     border-radius: 6px;
     text-align: left;
+    transition: border-color 0.2s ease;
+  }
+
+  /* Highlights with a thin orange border when clicked or focused */
+  .additional-capabilities:active,
+  .additional-capabilities:focus {
+    border: 1px solid #FF7F00;
+    outline: none; /* Removes the default browser focus outline */
   }
 
   .additional-capabilities h3 {
