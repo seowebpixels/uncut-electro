@@ -1,1 +1,81 @@
 @import "tailwindcss";
+
+/* ==========================================================================
+   1. MASTER DESIGN TOKENS (Change values here to update the ENTIRE site)
+   ========================================================================== */
+:root {
+  /* Site Colors */
+  --bg-primary: #222222;          /* Page background */
+  --bg-secondary: #2d2d2d;        /* Card / section secondary background */
+  --text-primary: #ffffff;        /* Main text color */
+  --text-secondary: #a3a3a3;      /* Subtitle / muted text color */
+  
+  /* Brand / Accent Colors */
+  --accent-color: #FF7F00;        /* Primary accent color */
+  --accent-hover: #e06f00;        /* Button fill color on hover */
+  --accent-text: #000000;         /* Text inside primary buttons */
+  --border-hover: #FF7F00;        /* Hover surround border color */
+
+  /* Button Dimensions & Styling */
+  --button-mobile-min-width: 160px;
+  --button-radius: 8px;
+}
+
+/* ==========================================================================
+   2. BASE PAGE STYLES (Overrides page backgrounds & text globally)
+   ========================================================================== */
+html, 
+body, 
+main, 
+#app, 
+#__next {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Link Styling */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   3. GLOBAL BUTTON STYLES & HOVER OVERRIDES
+   ========================================================================== */
+button, 
+.btn, 
+.hero-btn {
+  background-color: var(--accent-color) !important;
+  color: var(--accent-text) !important;
+  border-radius: var(--button-radius) !important;
+  border: 2px solid transparent !important; /* Prepares border for hover effect */
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Surround Border Effect on Hover */
+button:hover, 
+.btn:hover, 
+.hero-btn:hover {
+  background-color: var(--accent-hover) !important;
+  border-color: var(--border-hover) !important; /* Enforces #FF7F00 border on hover */
+}
+
+/* ==========================================================================
+   4. RESPONSIVE MOBILE FIXES
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Mobile Button Width & Sizing Overrides */
+  button, 
+  .btn, 
+  .hero-btn {
+    flex-shrink: 0 !important;
+    width: auto !important;
+    min-width: var(--button-mobile-min-width) !important;
+    padding: 12px 24px !important;
+    text-align: center !important;
+  }
+}
