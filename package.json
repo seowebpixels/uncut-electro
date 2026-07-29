@@ -1,0 +1,13 @@
+{
+  "name": "uncut-electro",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "astro build",
+    "dev": "astro dev"
+  },
+  "dependencies": {
+    "astro": "^7.1.5"
+  }
+}

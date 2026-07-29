@@ -1,0 +1,97 @@
+---
+// src/components/Navbar.astro
+---
+
+<header class="navbar">
+  <div class="logo-container">
+    <a href="#home">
+      <img 
+        src="/uncut-logo-new.avif" 
+        alt="UNCUT ELECTRO-MECHANICAL ENGINEERING Logo" 
+        class="logo-img"
+      />
+    </a>
+  </div>
+  <nav class="nav-links">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About Us</a></li>
+      <!-- CTA Button with explicit black text -->
+      <li><a href="#contact" class="cta-button">Get a Quote</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    background-color: #222222;
+    color: #ffffff;
+    border-bottom: 2px solid #FF7F00; /* Orange border at the bottom */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .logo-container img {
+    height: 45px;
+    width: auto;
+    display: block;
+  }
+
+  .nav-links ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #FF7F00;
+  }
+
+  /* Specific styling for buttons requiring black text */
+  .cta-button {
+    background-color: #FF7F00; /* Orange background */
+    color: #000000 !important;   /* Strictly black text */
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+  }
+
+  .cta-button:hover {
+    background-color: #e67300; /* Slightly darker orange on hover */
+    color: #000000 !important;
+  }
+
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    
+    .nav-links ul {
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+</style>

@@ -1,0 +1,155 @@
+---
+// src/components/IndustriesServed.astro
+const industries = [
+  {
+    title: "Mining & Minerals",
+    desc: "Robust electrical and mechanical support designed to withstand harsh underground and surface mining conditions.",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF7F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="m5 20 7-16 7 16"/><path d="M9.5 12h5"/></svg>`
+  },
+  {
+    title: "Manufacturing & Heavy Industry",
+    desc: "Minimizing downtime with reliable power distribution, motor maintenance, and custom industrial wiring.",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF7F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/></svg>`
+  },
+  {
+    title: "Utilities & Power Generation",
+    desc: "High-voltage transformer management, substation upkeep, and grid-supporting infrastructure solutions.",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF7F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`
+  },
+  {
+    title: "Commercial & Infrastructure",
+    desc: "Comprehensive electrical safety audits, backup diesel generator maintenance, and switchgear servicing.",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF7F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M8 10h.01"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 14h.01"/><path d="M16 14h.01"/><path d="M12 14h.01"/></svg>`
+  },
+  {
+    title: "Agricultural & Pumping Systems",
+    desc: "Heavy-duty motor rewinding and emergency breakdown repair for irrigation networks and processing plants.",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF7F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>`
+  },
+  {
+    title: "Oil, Gas & Petrochemical",
+    desc: "Strict safety-compliant maintenance, condition monitoring, and explosion-protected electrical engineering.",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF7F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`
+  }
+];
+---
+
+<section class="industries-section" id="industries">
+  <div class="industries-container">
+    <h2>Industries We Serve</h2>
+    <p class="section-subtitle">Delivering specialized electro-mechanical expertise across demanding sectors.</p>
+
+    <div class="industries-grid">
+      {industries.map(item => (
+        <div class="industry-card" tabindex="0">
+          <div class="icon-wrapper" set:html={item.svg} />
+          <h3>{item.title}</h3>
+          <p>{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Click-to-highlight state with orange border and glow effect
+  document.querySelectorAll('.industry-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.industry-card').forEach(c => c.classList.remove('is-clicked'));
+      card.classList.toggle('is-clicked');
+    });
+  });
+</script>
+
+<style>
+  .industries-section {
+    background-color: #222222;
+    color: #ffffff;
+    padding: 5rem 2rem;
+    border-bottom: 2px solid #FF7F00;
+  }
+
+  .industries-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .industries-container h2 {
+    font-size: 2.25rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-subtitle {
+    color: #cccccc;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+  }
+
+  /* Desktop Grid: 3 columns x 2 rows */
+  .industries-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .industry-card {
+    background-color: #1a1a1a;
+    border: 2px solid #333333;
+    border-top: 4px solid #FF7F00;
+    padding: 2.5rem 2rem;
+    border-radius: 6px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .industry-card:hover {
+    transform: translateY(-5px);
+    border-color: #FF7F00;
+  }
+
+  /* Click-activated orange border and glow */
+  .industry-card.is-clicked {
+    border-color: #FF7F00;
+    box-shadow: 0 0 12px rgba(255, 127, 0, 0.4);
+  }
+
+  .icon-wrapper {
+    margin-bottom: 1.25rem;
+    display: inline-block;
+  }
+
+  .industry-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #ffffff;
+  }
+
+  .industry-card p {
+    color: #aaaaaa;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* Mobile Layout: 1 column vertical stack (6 rows) */
+  @media (max-width: 768px) {
+    .industries-grid {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    .industry-card {
+      padding: 1.75rem 1.25rem;
+    }
+
+    .industries-container h2 {
+      font-size: 1.75rem;
+    }
+  }
+</style>

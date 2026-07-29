@@ -1,0 +1,154 @@
+---
+// src/components/Hero.astro
+---
+
+<section class="hero" id="home">
+  <div class="hero-container">
+    <div class="hero-content">
+      <h1>UNCUT ELECTRO-MECHANICAL ENGINEERING</h1>
+      <p>Reliable, precision-driven electro-mechanical solutions powering industrial excellence.</p>
+      
+      <!-- H2 Section -->
+      <div class="hero-subheading-group">
+        <h2>Expert Power Systems & Industrial Engineering</h2>
+        <p>Providing high-voltage maintenance, transformer installation, and critical infrastructure support for commercial and industrial sectors.</p>
+      </div>
+
+      <!-- Added H3 Section -->
+      <div class="hero-h3-group">
+        <h3>24/7 Rapid Response & Certified Compliance</h3>
+        <p>Licensed technicians deployed instantly across industrial sites to minimize downtime and eliminate electrical hazards.</p>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="tel:0795059510" class="btn-primary">Emergency Callout</a>
+        <a href="#services" class="btn-secondary">Our Services</a>
+      </div>
+    </div>
+    
+    <div class="hero-image-container">
+      <img 
+        src="/high-voltage-transformer.avif" 
+        alt="High-Voltage Transformer - Uncut Electro-Mechanical Engineering" 
+        width="626" 
+        height="428"
+        fetchpriority="high"
+        loading="eager"
+        class="hero-img"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background-color: #222222;
+    color: #ffffff;
+    padding: 4rem 2rem;
+  }
+
+  .hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-content {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.25rem;
+    color: #cccccc;
+  }
+
+  /* Styling for the H2 subsection */
+  .hero-subheading-group {
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #FF7F00; /* Brand orange accent */
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+  }
+
+  /* Styling for the H3 subsection */
+  .hero-h3-group {
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-content h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .btn-primary {
+    background-color: #FF7F00;
+    color: #000000;
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  .hero-image-container {
+    flex: 1;
+    min-width: 300px;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 1;
+    border-radius: 8px;
+    border: 2px solid #FF7F00;
+  }
+
+  @media (max-width: 768px) {
+    .hero-container {
+      flex-direction: column;
+      text-align: center;
+    }
+    .hero-buttons {
+      justify-content: center;
+    }
+  }
+</style>

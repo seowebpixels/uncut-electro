@@ -1,0 +1,43 @@
+---
+// src/layouts/BaseLayout.astro
+import Navbar from '../components/Navbar.astro';
+
+interface Props {
+  title?: string;
+}
+
+const { title = "UNCUT ELECTRO-MECHANICAL ENGINEERING" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Navbar />
+    <slot /> <!-- Your page components (Hero, Services, etc.) will render here -->
+  </body>
+</html>
+
+<style is:global>
+  /* Global site resets and defaults */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: #222222;
+    color: #ffffff;
+    font-family: sans-serif;
+  }
+
+  /* Global rule for buttons to ensure black text as requested previously */
+  button, .btn-primary {
+    color: #000000;
+  }
+</style>
