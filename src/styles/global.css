@@ -6,17 +6,17 @@
 :root {
   /* Site Colors */
   --bg-primary: #222222;          /* Page background */
-  --bg-secondary: #2d2d2d;        /* Card / section secondary background */
-  --text-primary: #ffffff;        /* Main text color */
-  --text-secondary: #a3a3a3;      /* Subtitle / muted text color */
+  --bg-secondary: #2d2d2d;        /* Secondary section background */
+  --text-primary: #ffffff;        /* Main heading & text color */
+  --text-secondary: #a3a3a3;      /* Muted text color */
   
   /* Brand / Accent Colors */
-  --accent-color: #FF7F00;        /* Primary accent color */
-  --accent-hover: #e06f00;        /* Button fill color on hover */
+  --accent-color: #FF7F00;        /* Primary orange accent */
+  --accent-hover: #e06f00;        /* Hover orange accent */
   --accent-text: #000000;         /* Text inside primary buttons (Black) */
-  --border-hover: #FF7F00;        /* Hover surround border color */
+  --border-hover: #FF7F00;        /* Surround border on hover */
 
-  /* Button Dimensions & Styling */
+  /* Button Dimensions */
   --button-height-desktop: 48px;  /* Desktop button height */
   --button-height-mobile: 44px;   /* Mobile button height */
   --button-mobile-min-width: 160px;
@@ -38,88 +38,84 @@ main,
   box-sizing: border-box;
 }
 
-/* Global Link Styling */
 a {
   color: var(--accent-color);
   text-decoration: none;
 }
 
 /* ==========================================================================
-   3. GLOBAL BUTTON STYLES (DESKTOP DEFAULT)
+   3. HERO & GLOBAL BUTTON OVERRIDES (ASTRO SCOPED FIX)
    ========================================================================== */
 
-/* Target all buttons, callouts, and link-buttons */
-button, 
-.btn, 
-.hero-btn,
-a.btn,
-a.hero-btn,
-[role="button"],
-[class*="btn"],
-[class*="button"],
-[class*="callout"],
-[class*="emergency"] {
-  background-color: var(--accent-color) !important;
-  color: var(--accent-text) !important;
-  border-radius: var(--button-radius) !important;
-  border: 2px solid transparent !important;
-  height: var(--button-height-desktop) !important; /* Uses Desktop Height Variable */
+/* Shared Structural Button Base */
+button,
+.btn,
+.btn-primary,
+.btn-secondary,
+.hero-buttons a {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding-left: 24px !important;
-  padding-right: 24px !important;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  height: var(--button-height-desktop) !important;
+  border-radius: var(--button-radius) !important;
+  padding: 0 24px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  box-sizing: border-box !important;
+  transition: all 0.2s ease-in-out !important;
 }
 
-/* NUCLEAR OVERRIDE: Force ALL nested elements (text, spans, icons, SVGs) to visible solid black */
-button *, 
-.btn *, 
-.hero-btn *,
-a.btn *,
-a.hero-btn *,
-[role="button"] *,
-[class*="btn"] *,
-[class*="button"] *,
-[class*="callout"] *,
-[class*="emergency"] * {
+/* PRIMARY BUTTON (Emergency Callout - Solid Orange background with BLACK text) */
+html body .btn-primary,
+html body a.btn-primary,
+html body .hero-buttons a.btn-primary {
+  background-color: var(--accent-color) !important;
   color: #000000 !important;
-  fill: #000000 !important;
-  stroke: #000000 !important;
-  -webkit-text-fill-color: #000000 !important; /* Overrides gradient/transparent text */
-  opacity: 1 !important;
+  border: 2px solid var(--accent-color) !important;
 }
 
-/* Surround Border Effect on Hover */
-button:hover, 
-.btn:hover, 
-.hero-btn:hover,
-a.btn:hover,
-a.hero-btn:hover,
-[class*="callout"]:hover,
-[class*="emergency"]:hover {
+/* Force all nested text/spans in primary button to solid black */
+html body .btn-primary *,
+html body a.btn-primary * {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+}
+
+html body .btn-primary:hover,
+html body a.btn-primary:hover {
   background-color: var(--accent-hover) !important;
   border-color: var(--border-hover) !important;
+  color: #000000 !important;
+}
+
+/* SECONDARY BUTTON (Our Services - Outline Style) */
+html body .btn-secondary,
+html body a.btn-secondary,
+html body .hero-buttons a.btn-secondary {
+  background-color: transparent !important;
+  color: var(--accent-color) !important;
+  border: 2px solid var(--accent-color) !important;
+}
+
+html body .btn-secondary:hover,
+html body a.btn-secondary:hover {
+  background-color: var(--accent-color) !important;
+  color: #000000 !important;
 }
 
 /* ==========================================================================
-   4. RESPONSIVE MOBILE FIXES (MOBILE OVERRIDES)
+   4. RESPONSIVE MOBILE OVERRIDES
    ========================================================================== */
 @media (max-width: 768px) {
-  button, 
-  .btn, 
-  .hero-btn,
-  a.btn,
-  a.hero-btn,
-  [role="button"],
-  [class*="btn"],
-  [class*="button"],
-  [class*="callout"],
-  [class*="emergency"] {
+  button,
+  .btn,
+  .btn-primary,
+  .btn-secondary,
+  .hero-buttons a {
     flex-shrink: 0 !important;
     width: auto !important;
     min-width: var(--button-mobile-min-width) !important;
-    height: var(--button-height-mobile) !important; /* Uses Mobile Height Variable */
+    height: var(--button-height-mobile) !important;
+    text-align: center !important;
   }
 }
