@@ -44,15 +44,16 @@ a {
 }
 
 /* ==========================================================================
-   3. HERO & GLOBAL BUTTON OVERRIDES (ASTRO SCOPED FIX)
+   3. HERO & GLOBAL BUTTON OVERRIDES (UNBEATABLE ID SPECIFICITY)
    ========================================================================== */
 
-/* Shared Structural Button Base */
+/* Shared Layout Rules */
 button,
 .btn,
 .btn-primary,
 .btn-secondary,
-.hero-buttons a {
+.hero-buttons a,
+#home .hero-buttons a {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -65,40 +66,49 @@ button,
   transition: all 0.2s ease-in-out !important;
 }
 
-/* PRIMARY BUTTON (Emergency Callout - Solid Orange background with BLACK text) */
-html body .btn-primary,
-html body a.btn-primary,
-html body .hero-buttons a.btn-primary {
+/* --------------------------------------------------------------------------
+   PRIMARY BUTTON (Emergency Callout - Solid Orange Background + SOLID BLACK TEXT)
+   -------------------------------------------------------------------------- */
+#home .btn-primary,
+#home a.btn-primary,
+html body #home .hero-buttons a.btn-primary {
   background-color: var(--accent-color) !important;
   color: #000000 !important;
   border: 2px solid var(--accent-color) !important;
 }
 
-/* Force all nested text/spans in primary button to solid black */
-html body .btn-primary *,
-html body a.btn-primary * {
+/* Target all child text nodes inside Emergency Callout */
+#home .btn-primary *,
+#home a.btn-primary *,
+html body #home .hero-buttons a.btn-primary * {
   color: #000000 !important;
   -webkit-text-fill-color: #000000 !important;
 }
 
-html body .btn-primary:hover,
-html body a.btn-primary:hover {
+/* Hover state */
+#home .btn-primary:hover,
+#home a.btn-primary:hover,
+html body #home .hero-buttons a.btn-primary:hover {
   background-color: var(--accent-hover) !important;
   border-color: var(--border-hover) !important;
   color: #000000 !important;
 }
 
-/* SECONDARY BUTTON (Our Services - Outline Style) */
-html body .btn-secondary,
-html body a.btn-secondary,
-html body .hero-buttons a.btn-secondary {
+/* --------------------------------------------------------------------------
+   SECONDARY BUTTON (Our Services - Transparent + Orange Text/Border)
+   -------------------------------------------------------------------------- */
+#home .btn-secondary,
+#home a.btn-secondary,
+html body #home .hero-buttons a.btn-secondary {
   background-color: transparent !important;
   color: var(--accent-color) !important;
   border: 2px solid var(--accent-color) !important;
 }
 
-html body .btn-secondary:hover,
-html body a.btn-secondary:hover {
+/* Hover state */
+#home .btn-secondary:hover,
+#home a.btn-secondary:hover,
+html body #home .hero-buttons a.btn-secondary:hover {
   background-color: var(--accent-color) !important;
   color: #000000 !important;
 }
@@ -111,7 +121,8 @@ html body a.btn-secondary:hover {
   .btn,
   .btn-primary,
   .btn-secondary,
-  .hero-buttons a {
+  .hero-buttons a,
+  #home .hero-buttons a {
     flex-shrink: 0 !important;
     width: auto !important;
     min-width: var(--button-mobile-min-width) !important;
