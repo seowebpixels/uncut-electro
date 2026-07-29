@@ -1,8 +1,8 @@
 ---
-// src/components/Hero.astro (Tailwind CSS - Grid Layout)
+// src/components/Hero.astro (Tailwind CSS Version)
 ---
 
-<section class="bg-[#222222] text-white py-12 md:py-16 px-6 md:px-12" id="home">
+<section class="bg-[#222222] text-white py-12 md:py-16 px-6 md:px-12 md:pl-[60px]" id="home">
   <!-- Grid container: 1 col on mobile, 2 cols on desktop -->
   <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
     
@@ -49,12 +49,15 @@
       </p>
     </div>
 
-    <!-- 5. Action Buttons (Stacked on Mobile, Side-by-Side on Desktop) -->
-    <div class="order-5 md:col-start-1 md:row-start-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-      <a href="tel:0795059510" class="bg-[#FF7F00] text-black text-center font-bold px-8 py-4 rounded uppercase no-underline text-base md:text-lg min-w-[200px] shadow-md hover:bg-[#e67300] transition-colors">
+    <!-- 5. Action Buttons -->
+    <div class="order-5 md:col-start-1 md:row-start-4 flex flex-col items-center md:items-start sm:flex-row gap-4 justify-center md:justify-start">
+      <!-- Emergency Callout (Wider on desktop, narrower on mobile, doubled py-8 height) -->
+      <a href="tel:0795059510" class="bg-[#FF7F00] text-black text-center font-bold py-8 px-6 md:px-10 w-[85%] max-w-[280px] md:max-w-none md:w-auto md:min-w-[280px] rounded uppercase no-underline text-base md:text-lg shadow-md hover:bg-[#e67300] transition-colors flex items-center justify-center">
         Emergency Callout
       </a>
-      <a href="#services" class="bg-transparent text-white border-2 border-white text-center font-bold px-8 py-4 rounded uppercase no-underline text-base md:text-lg min-w-[200px] hover:bg-white hover:text-black transition-colors">
+      
+      <!-- Our Services (Standard width on desktop, narrower on mobile, doubled py-8 height) -->
+      <a href="#services" class="bg-transparent text-white border-2 border-white text-center font-bold py-8 px-6 md:px-8 w-[85%] max-w-[280px] md:max-w-none md:w-auto md:min-w-[200px] rounded uppercase no-underline text-base md:text-lg hover:bg-white hover:text-black transition-colors flex items-center justify-center">
         Our Services
       </a>
     </div>
