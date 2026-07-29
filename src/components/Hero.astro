@@ -1,56 +1,23 @@
 ---
-// src/components/Hero.astro (Tailwind CSS Version)
+// src/components/Hero.astro (Tailwind CSS - Grid Layout)
 ---
 
-<section class="bg-[#222222] text-white py-16 px-8" id="home">
-  <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row items-center justify-between gap-12 text-center md:text-left">
+<section class="bg-[#222222] text-white py-12 md:py-16 px-6 md:px-12" id="home">
+  <!-- Grid container: 1 col on mobile, 2 cols on desktop -->
+  <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
     
-    <div class="contents md:block md:flex-1 md:min-w-[300px]">
-      <!-- Header Group -->
-      <div class="order-1">
-        <!-- mt-5 adds 20px top margin to lower the headline -->
-        <h1 class="text-4xl font-extrabold mt-5 mb-4 leading-tight uppercase">
-          UNCUT ELECTRO-MECHANICAL ENGINEERING
-        </h1>
-        <p class="text-lg text-[#cccccc] mb-5">
-          Reliable, precision-driven electro-mechanical solutions powering industrial excellence.
-        </p>
-      </div>
-
-      <!-- H2 Group -->
-      <div class="order-3 mb-5">
-        <h2 class="text-xl font-bold text-[#FF7F00] mb-1 uppercase">
-          Expert Power Systems & Industrial Engineering
-        </h2>
-        <p class="text-lg text-[#cccccc]">
-          Providing high-voltage maintenance, transformer installation, and critical infrastructure support for commercial and industrial sectors.
-        </p>
-      </div>
-
-      <!-- H3 Group -->
-      <div class="order-4 mb-7">
-        <h3 class="text-base font-semibold text-white mb-1 uppercase">
-          24/7 Rapid Response & Certified Compliance
-        </h3>
-        <p class="text-lg text-[#cccccc]">
-          Licensed technicians deployed instantly across industrial sites to minimize downtime and eliminate electrical hazards.
-        </p>
-      </div>
-
-      <!-- Action Buttons -->
-      <div class="order-5 flex flex-wrap gap-4 justify-center md:justify-start">
-        <!-- Increased padding (px-8 py-4), added min-w-[180px], text-center, & inline-block -->
-        <a href="tel:0795059510" class="bg-[#FF7F00] text-black px-8 py-4 min-w-[180px] text-center font-bold rounded uppercase no-underline inline-block">
-          Emergency Callout
-        </a>
-        <a href="#services" class="bg-transparent text-white border-2 border-white px-8 py-4 min-w-[180px] text-center font-bold rounded uppercase no-underline inline-block">
-          Our Services
-        </a>
-      </div>
+    <!-- 1. H1 Header Group -->
+    <div class="order-1 md:col-start-1 md:row-start-1">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mt-2 md:mt-0 mb-4 leading-tight uppercase text-center md:text-left">
+        UNCUT ELECTRO-MECHANICAL ENGINEERING
+      </h1>
+      <p class="text-base sm:text-lg text-[#cccccc] mb-2 text-center md:text-left">
+        Reliable, precision-driven electro-mechanical solutions powering industrial excellence.
+      </p>
     </div>
 
-    <!-- Image Container -->
-    <div class="order-2 md:order-none w-full md:flex-1 md:min-w-[300px] mb-6 md:mb-0">
+    <!-- 2. Hero Image Container -->
+    <div class="order-2 md:col-start-2 md:row-start-1 md:row-span-4 w-full flex justify-center items-center my-2 md:my-0">
       <img 
         src="/high-voltage-transformer.avif" 
         alt="High-Voltage Transformer - Uncut Electro-Mechanical Engineering" 
@@ -58,8 +25,38 @@
         height="428"
         fetchpriority="high"
         loading="eager"
-        class="w-full h-auto block rounded-lg border-2 border-[#FF7F00]"
+        class="w-full h-auto max-w-[626px] block rounded-lg border-2 border-[#FF7F00] shadow-xl"
       />
+    </div>
+
+    <!-- 3. H2 Group -->
+    <div class="order-3 md:col-start-1 md:row-start-2 mb-2 text-center md:text-left">
+      <h2 class="text-xl md:text-2xl font-bold text-[#FF7F00] mb-2 uppercase">
+        Expert Power Systems & Industrial Engineering
+      </h2>
+      <p class="text-base md:text-lg text-[#cccccc]">
+        Providing high-voltage maintenance, transformer installation, and critical infrastructure support for commercial and industrial sectors.
+      </p>
+    </div>
+
+    <!-- 4. H3 Group -->
+    <div class="order-4 md:col-start-1 md:row-start-3 mb-4 text-center md:text-left">
+      <h3 class="text-lg md:text-xl font-semibold text-white mb-2 uppercase">
+        24/7 Rapid Response & Certified Compliance
+      </h3>
+      <p class="text-base md:text-lg text-[#cccccc]">
+        Licensed technicians deployed instantly across industrial sites to minimize downtime and eliminate electrical hazards.
+      </p>
+    </div>
+
+    <!-- 5. Action Buttons (Stacked on Mobile, Side-by-Side on Desktop) -->
+    <div class="order-5 md:col-start-1 md:row-start-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+      <a href="tel:0795059510" class="bg-[#FF7F00] text-black text-center font-bold px-8 py-4 rounded uppercase no-underline text-base md:text-lg min-w-[200px] shadow-md hover:bg-[#e67300] transition-colors">
+        Emergency Callout
+      </a>
+      <a href="#services" class="bg-transparent text-white border-2 border-white text-center font-bold px-8 py-4 rounded uppercase no-underline text-base md:text-lg min-w-[200px] hover:bg-white hover:text-black transition-colors">
+        Our Services
+      </a>
     </div>
 
   </div>
