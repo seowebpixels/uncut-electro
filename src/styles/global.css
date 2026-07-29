@@ -73,7 +73,7 @@ a.hero-btn,
   transition: all 0.2s ease-in-out;
 }
 
-/* Force all text, spans, paragraphs, and icons inside buttons to render in BLACK */
+/* NUCLEAR OVERRIDE: Force ALL nested elements (text, spans, icons, SVGs) to visible solid black */
 button *, 
 .btn *, 
 .hero-btn *,
@@ -84,8 +84,11 @@ a.hero-btn *,
 [class*="button"] *,
 [class*="callout"] *,
 [class*="emergency"] * {
-  color: var(--accent-text) !important;
-  fill: var(--accent-text) !important;
+  color: #000000 !important;
+  fill: #000000 !important;
+  stroke: #000000 !important;
+  -webkit-text-fill-color: #000000 !important; /* Overrides gradient/transparent text */
+  opacity: 1 !important;
 }
 
 /* Surround Border Effect on Hover */
