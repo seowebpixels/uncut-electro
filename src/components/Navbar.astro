@@ -38,12 +38,12 @@
   }
 
   .logo-container img {
-  width: 220px;
-  height: 220px;
-  max-height: 220px;
-  object-fit: contain;
-  display: block;
-}
+    width: 220px;
+    height: 220px;
+    max-height: 220px;
+    object-fit: contain;
+    display: block;
+  }
 
   .nav-links ul {
     list-style: none;
@@ -83,13 +83,24 @@
     color: #000000 !important;
   }
 
+  /* Mobile-only adjustments (Screens 768px wide or smaller) */
   @media (max-width: 768px) {
     .navbar {
       flex-direction: column;
       gap: 1rem;
       padding: 1rem;
     }
-    
+
+    /* Shifts the logo up by 60px on mobile */
+    .logo-container img {
+      transform: translateY(-60px);
+    }
+
+    /* Shifts the entire menu row up by 60px on mobile */
+    .nav-links {
+      transform: translateY(-60px);
+    }
+
     .nav-links ul {
       gap: 1.25rem;
       flex-wrap: wrap;
