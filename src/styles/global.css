@@ -17,8 +17,8 @@
   --border-hover: #FF7F00;        /* Surround border on hover */
 
   /* Button Dimensions */
-  --button-height-desktop: 48px;  /* Desktop button height */
-  --button-height-mobile: 44px;   /* Mobile button height */
+  --button-height-desktop: 65px;  /* Desktop button height */
+  --button-height-mobile: 50px;   /* Mobile button height */
   --button-mobile-min-width: 160px;
   --button-radius: 8px;
 }
