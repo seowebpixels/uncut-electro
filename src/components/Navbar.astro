@@ -31,7 +31,7 @@
     padding: 1rem 2.5rem;
     background-color: #000000;
     color: #ffffff;
-    border-bottom: 2px solid #FF7F00; /* Orange border at the bottom */
+    border-bottom: 2px solid #FF7F00; /* Orange border on desktop */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -89,6 +89,19 @@
       flex-direction: column;
       gap: 1rem;
       padding: 1rem;
+      border-bottom: none; /* Remove standard border on mobile */
+      position: relative;  /* Container reference for line positioning */
+    }
+
+    /* Create the custom orange line moved up by 50px */
+    .navbar::after {
+      content: '';
+      position: absolute;
+      bottom: 50px; /* Positions line 50px up from the bottom of the navbar */
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #FF7F00;
     }
 
     /* Shifts the logo up by 60px on mobile */
@@ -96,9 +109,9 @@
       transform: translateY(-60px);
     }
 
-    /* Shifts the entire menu row up by 80px on mobile */
+    /* Shifts the entire menu row up by 60px on mobile */
     .nav-links {
-      transform: translateY(-80px);
+      transform: translateY(-60px);
     }
 
     .nav-links ul {
