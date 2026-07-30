@@ -6,38 +6,41 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   title="Condition Monitoring & Predictive Maintenance | Machine Reliability Services"
   description="Maximize equipment uptime, prevent unexpected breakdowns, and reduce operational costs with our advanced condition monitoring, vibration analysis, and laser shaft alignment services."
 >
-  <div class="bg-[#222222] text-[#FFFFFF] min-h-screen">
+  <div style="background-color: #222222; color: #FFFFFF; min-height: 100vh;">
 
-    <!-- HERO SECTION (Starts 60px down from header) -->
-    <section class="pt-[60px] pb-12">
-      <div class="container mx-auto px-4 max-w-6xl">
-        <!-- Grid aligns image top-to-top inline with the H1 content block -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+    <!-- 1. HERO SECTION (Starts 60px down from header) -->
+    <section style="padding-top: 60px; padding-bottom: 48px;">
+      <div style="max-width: 1152px; margin-left: auto; margin-right: auto; padding-left: 16px; padding-right: 16px;">
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 48px; align-items: start;">
           
-          <!-- Hero Left Column (Shifted 60px away from left border) -->
-          <div class="pl-[60px]">
-            <span class="text-gray-400 text-sm font-semibold tracking-wider uppercase block mb-2">
+          <!-- Left Column (H1 Content: 60px left padding) -->
+          <div style="padding-left: 60px;">
+            <span style="color: #9CA3AF; font-size: 14px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; display: block; margin-bottom: 8px;">
               Predictive Maintenance & Reliability
             </span>
+            
             <!-- H1 Header: White -->
-            <h1 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            <h1 style="color: #FFFFFF; font-size: 2.25rem; line-height: 1.2; font-weight: 700; margin-top: 8px; margin-bottom: 24px;">
               Condition Monitoring Services
             </h1>
-            <p class="text-lg text-gray-300 leading-relaxed">
+            
+            <p style="color: #D1D5DB; font-size: 1.125rem; line-height: 1.625;">
               Transition from costly reactive firefighting to proactive machinery healthcare. Our condition monitoring services provide real-time insights into machine health—stopping catastrophic failures before they happen.
             </p>
-            <!-- Schedule an Inspection Button: 30px below paragraph -->
-            <a href="#contact" class="inline-block mt-[30px] bg-[#FF7F00] hover:bg-[#e06f00] text-[#222222] font-bold px-6 py-3 rounded-md transition-colors">
+            
+            <!-- Schedule Button: 30px below paragraph -->
+            <a href="#contact" style="display: inline-block; margin-top: 30px; background-color: #FF7F00; color: #222222; font-weight: 700; padding: 12px 24px; border-radius: 6px; text-decoration: none;">
               Schedule an Inspection
             </a>
           </div>
           
-          <!-- Hero Right Column: Image inline with H1 -->
-          <div class="rounded-xl overflow-hidden shadow-2xl border border-neutral-800">
+          <!-- Right Column (Image inline top-to-top with text) -->
+          <div style="border-radius: 12px; overflow: hidden; border: 1px solid #262626; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);">
             <img 
               src="/cs-condition-monitoring-shaft-alignment.avif" 
               alt="Laser shaft alignment system on industrial machinery" 
-              class="w-full h-auto object-cover block"
+              style="width: 100%; height: auto; display: block; object-fit: cover;"
             />
           </div>
 
@@ -45,26 +48,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </section>
 
-    <!-- OVERVIEW SECTION (40px below hero image, Center Aligned, H2 in Orange) -->
-    <section class="mt-[40px] py-12 border-t border-neutral-800 text-center">
-      <div class="container mx-auto px-4 max-w-4xl text-center flex flex-col items-center">
+    <!-- 2. OVERVIEW SECTION (40px below image, Center Aligned, H2 in Orange) -->
+    <section style="margin-top: 40px; padding-top: 48px; padding-bottom: 48px; border-top: 1px solid #262626; text-align: center;">
+      <div style="max-width: 896px; margin-left: auto; margin-right: auto; padding-left: 16px; padding-right: 16px; display: flex; flex-direction: column; align-items: center;">
         
         <!-- H2 Header: Orange -->
-        <h2 class="text-3xl font-bold text-[#FF7F00] mb-4 text-center">
+        <h2 style="color: #FF7F00; font-size: 1.875rem; font-weight: 700; margin-bottom: 16px; text-align: center;">
           What is Condition Monitoring?
         </h2>
-        <div class="w-20 h-1 bg-[#FF7F00] mx-auto rounded mb-8"></div>
+        <div style="width: 80px; height: 4px; background-color: #FF7F00; margin-left: auto; margin-right: auto; border-radius: 2px; margin-bottom: 32px;"></div>
         
-        <p class="text-lg text-gray-300 leading-relaxed mb-8 text-center mx-auto max-w-3xl">
-          <strong class="text-white">Condition Monitoring (CM)</strong> is the continuous or periodic measurement of physical parameters—such as vibration, temperature, oil purity, and thermal profiles—in operating machinery. By tracking changes in these indicators over time, we can detect early-stage mechanical degradation long before functional failure occurs.
+        <p style="color: #D1D5DB; font-size: 1.125rem; line-height: 1.625; margin-bottom: 32px; text-align: center; max-width: 768px;">
+          <strong style="color: #FFFFFF;">Condition Monitoring (CM)</strong> is the continuous or periodic measurement of physical parameters—such as vibration, temperature, oil purity, and thermal profiles—in operating machinery. By tracking changes in these indicators over time, we can detect early-stage mechanical degradation long before functional failure occurs.
         </p>
 
-        <div class="bg-[#2a2a2a] border-t-4 border-[#FF7F00] p-6 rounded-lg shadow-sm my-4 text-center mx-auto max-w-3xl">
+        <div style="background-color: #2a2a2a; border-top: 4px solid #FF7F00; padding: 24px; border-radius: 8px; margin-top: 16px; margin-bottom: 16px; text-align: center; max-width: 768px;">
           <!-- H3 Header: White -->
-          <h3 class="text-xl font-bold text-white mb-2 text-center">
+          <h3 style="color: #FFFFFF; font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; text-align: center;">
             How We Elevate Your Maintenance Strategy
           </h3>
-          <p class="text-gray-300 leading-relaxed text-center">
+          <p style="color: #D1D5DB; line-height: 1.625; text-align: center; margin: 0;">
             Unplanned downtime drains capital, interrupts production, and leads to expensive secondary damage. We go beyond simply generating data logs—our certified reliability engineers deliver <strong>clear, actionable diagnosis</strong> and targeted recommendations. We help you extend machinery lifespan, optimize lube cycles, lower energy consumption, and plan maintenance during scheduled outages on <em>your</em> terms.
           </p>
         </div>
@@ -72,128 +75,117 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </section>
 
-    <!-- SOLUTIONS GRID SECTION (Center Aligned, H2 in Orange, H3 in White) -->
-    <section class="py-12 border-t border-neutral-800 text-center">
-      <div class="container mx-auto px-4 max-w-6xl text-center flex flex-col items-center">
+    <!-- 3. SOLUTIONS GRID SECTION (Center Aligned, H2 in Orange, H3 in White) -->
+    <section style="padding-top: 48px; padding-bottom: 48px; border-top: 1px solid #262626; text-align: center;">
+      <div style="max-width: 1152px; margin-left: auto; margin-right: auto; padding-left: 16px; padding-right: 16px; display: flex; flex-direction: column; align-items: center;">
         
-        <div class="text-center mb-12">
+        <div style="text-align: center; margin-bottom: 48px;">
           <!-- H2 Header: Orange -->
-          <h2 class="text-3xl font-bold text-[#FF7F00] mb-4 text-center">
+          <h2 style="color: #FF7F00; font-size: 1.875rem; font-weight: 700; margin-bottom: 16px; text-align: center;">
             Our Condition Monitoring Solutions
           </h2>
-          <p class="text-gray-300 max-w-2xl mx-auto text-center">
+          <p style="color: #D1D5DB; max-width: 672px; margin-left: auto; margin-right: auto; text-align: center;">
             We combine advanced Non-Destructive Testing (NDT) technologies with deep engineering expertise to safeguard critical plant assets.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center w-full">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; width: 100%;">
           
           <!-- Card 1 -->
-          <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center flex flex-col items-center w-full">
-            <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4">
+          <div style="background-color: #2a2a2a; padding: 24px; border-radius: 12px; border: 1px solid #262626; text-align: center; display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 48px; height: 48px; background-color: rgba(255, 127, 0, 0.2); color: #FF7F00; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: 16px;">
               01
             </div>
-            <!-- H3 Header: White -->
-            <h3 class="text-xl font-bold text-white mb-3 text-center">Condition Monitoring Programs</h3>
-            <p class="text-gray-300 text-sm leading-relaxed text-center">
+            <h3 style="color: #FFFFFF; font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; text-align: center;">Condition Monitoring Programs</h3>
+            <p style="color: #D1D5DB; font-size: 0.875rem; line-height: 1.625; text-align: center; margin: 0;">
               Turnkey predictive maintenance management tailored to your plant criticality matrix. We set baseline parameters, perform regular route inspections, analyze trending data, and provide easy-to-read executive summary reports with clear repair priorities.
             </p>
           </div>
 
           <!-- Card 2 -->
-          <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center flex flex-col items-center w-full">
-            <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4">
+          <div style="background-color: #2a2a2a; padding: 24px; border-radius: 12px; border: 1px solid #262626; text-align: center; display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 48px; height: 48px; background-color: rgba(255, 127, 0, 0.2); color: #FF7F00; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: 16px;">
               02
             </div>
-            <!-- H3 Header: White -->
-            <h3 class="text-xl font-bold text-white mb-3 text-center">Vibration Analysis</h3>
-            <p class="text-gray-300 text-sm leading-relaxed text-center">
+            <h3 style="color: #FFFFFF; font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; text-align: center;">Vibration Analysis</h3>
+            <p style="color: #D1D5DB; font-size: 0.875rem; line-height: 1.625; text-align: center; margin: 0;">
               Vibration is the heart rate of rotating equipment. Using FFT spectrum analysis, peakVue technology, and phase measurements, we pinpoint unbalance, misalignment, roller bearing defects, gear tooth wear, structural looseness, and resonance early.
             </p>
           </div>
 
           <!-- Card 3 -->
-          <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center flex flex-col items-center w-full">
-            <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4">
+          <div style="background-color: #2a2a2a; padding: 24px; border-radius: 12px; border: 1px solid #262626; text-align: center; display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 48px; height: 48px; background-color: rgba(255, 127, 0, 0.2); color: #FF7F00; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: 16px;">
               03
             </div>
-            <!-- H3 Header: White -->
-            <h3 class="text-xl font-bold text-white mb-3 text-center">Precision Shaft Alignment</h3>
-            <p class="text-gray-300 text-sm leading-relaxed text-center">
+            <h3 style="color: #FFFFFF; font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; text-align: center;">Precision Shaft Alignment</h3>
+            <p style="color: #D1D5DB; font-size: 0.875rem; line-height: 1.625; text-align: center; margin: 0;">
               Misalignment accounts for up to 50% of rotating machinery breakdowns. Utilizing state-of-the-art laser alignment tools, we restore horizontal, vertical, and angular alignment within OEM tolerances—reducing seal strain, power consumption, and bearing stress.
             </p>
           </div>
 
           <!-- Card 4 -->
-          <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center flex flex-col items-center w-full">
-            <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4">
+          <div style="background-color: #2a2a2a; padding: 24px; border-radius: 12px; border: 1px solid #262626; text-align: center; display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 48px; height: 48px; background-color: rgba(255, 127, 0, 0.2); color: #FF7F00; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: 16px;">
               04
             </div>
-            <!-- H3 Header: White -->
-            <h3 class="text-xl font-bold text-white mb-3 text-center">Oil & Fluid Analysis</h3>
-            <p class="text-gray-300 text-sm leading-relaxed text-center">
+            <h3 style="color: #FFFFFF; font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; text-align: center;">Oil & Fluid Analysis</h3>
+            <p style="color: #D1D5DB; font-size: 0.875rem; line-height: 1.625; text-align: center; margin: 0;">
               Oil is the liquid blood of your machine. Our laboratory fluid analysis tests for wear metals, particle counts, water contamination, viscosity index, and additive depletion—letting you assess component health and safely extend oil drain intervals.
             </p>
           </div>
 
           <!-- Card 5 -->
-          <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center flex flex-col items-center w-full">
-            <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4">
+          <div style="background-color: #2a2a2a; padding: 24px; border-radius: 12px; border: 1px solid #262626; text-align: center; display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 48px; height: 48px; background-color: rgba(255, 127, 0, 0.2); color: #FF7F00; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: 16px;">
               05
             </div>
-            <!-- H3 Header: White -->
-            <h3 class="text-xl font-bold text-white mb-3 text-center">Infrared Thermography</h3>
-            <p class="text-gray-300 text-sm leading-relaxed text-center">
+            <h3 style="color: #FFFFFF; font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; text-align: center;">Infrared Thermography</h3>
+            <p style="color: #D1D5DB; font-size: 0.875rem; line-height: 1.625; text-align: center; margin: 0;">
               Non-contact thermal imaging detects invisible electrical phase imbalances, loose connections, overloaded circuits, friction hotspots, and refractory insulation leaks—preventing electrical fires and component burnouts.
             </p>
           </div>
 
           <!-- Card 6 -->
-          <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center flex flex-col items-center w-full">
-            <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4">
+          <div style="background-color: #2a2a2a; padding: 24px; border-radius: 12px; border: 1px solid #262626; text-align: center; display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 48px; height: 48px; background-color: rgba(255, 127, 0, 0.2); color: #FF7F00; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: 16px;">
               06
             </div>
-            <!-- H3 Header: White -->
-            <h3 class="text-xl font-bold text-white mb-3 text-center">Machinery Lubrication</h3>
-            <p class="text-gray-300 text-sm leading-relaxed text-center">
+            <h3 style="color: #FFFFFF; font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; text-align: center;">Machinery Lubrication</h3>
+            <p style="color: #D1D5DB; font-size: 0.875rem; line-height: 1.625; text-align: center; margin: 0;">
               Improper lubrication causes over 70% of premature bearing failures. We design and audit best-in-class lubrication programs: establishing correct lubricant selection, precise regreasing volumes/frequencies, contamination control, and storage solutions.
             </p>
           </div>
 
           <!-- Card 7 -->
-          <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all lg:col-span-3 text-center flex flex-col items-center w-full">
-            <div class="flex flex-col items-center gap-4 text-center w-full">
-              <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex-shrink-0 flex items-center justify-center font-bold text-xl">
-                07
-              </div>
-              <div class="text-center w-full">
-                <!-- H3 Header: White -->
-                <h3 class="text-xl font-bold text-white mb-2 text-center">Root Cause Failure Analysis (RCFA)</h3>
-                <p class="text-gray-300 text-sm leading-relaxed max-w-3xl mx-auto text-center">
-                  When a component fails, repairing it without identifying the underlying cause invites repeat failures. Our forensic engineering team conducts thorough Root Cause Failure Analysis—evaluating fractography, operational history, lubrication quality, and alignment logs to implement permanent corrective measures.
-                </p>
-              </div>
+          <div style="background-color: #2a2a2a; padding: 24px; border-radius: 12px; border: 1px solid #262626; text-align: center; display: flex; flex-direction: column; align-items: center; grid-column: 1 / -1;">
+            <div style="width: 48px; height: 48px; background-color: rgba(255, 127, 0, 0.2); color: #FF7F00; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; margin-bottom: 16px;">
+              07
             </div>
+            <h3 style="color: #FFFFFF; font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; text-align: center;">Root Cause Failure Analysis (RCFA)</h3>
+            <p style="color: #D1D5DB; font-size: 0.875rem; line-height: 1.625; text-align: center; max-width: 768px; margin: 0;">
+              When a component fails, repairing it without identifying the underlying cause invites repeat failures. Our forensic engineering team conducts thorough Root Cause Failure Analysis—evaluating fractography, operational history, lubrication quality, and alignment logs to implement permanent corrective measures.
+            </p>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- BOTTOM CTA SECTION (Centered, H2 in Orange, Button 30px below paragraph) -->
-    <section id="contact" class="py-12 text-center border-t border-neutral-800">
-      <div class="container mx-auto px-4 max-w-4xl text-center flex flex-col items-center">
+    <!-- 4. BOTTOM CTA SECTION (Centered, H2 in Orange, Button 30px below paragraph) -->
+    <section id="contact" style="padding-top: 48px; padding-bottom: 48px; border-top: 1px solid #262626; text-align: center;">
+      <div style="max-width: 896px; margin-left: auto; margin-right: auto; padding-left: 16px; padding-right: 16px; display: flex; flex-direction: column; align-items: center;">
         
         <!-- H2 Header: Orange -->
-        <h2 class="text-3xl font-bold text-[#FF7F00] mb-4 text-center">
+        <h2 style="color: #FF7F00; font-size: 1.875rem; font-weight: 700; margin-bottom: 16px; text-align: center;">
           Ready to Eliminate Unplanned Downtime?
         </h2>
-        <p class="text-gray-300 text-lg text-center mx-auto max-w-2xl">
+        <p style="color: #D1D5DB; font-size: 1.125rem; text-align: center; max-width: 672px; margin: 0;">
           Partner with our reliability specialists to implement a condition monitoring schedule customized to your plant's operational demands.
         </p>
         
         <!-- Get in Touch Button: 30px below paragraph -->
-        <a href="/contact" class="inline-block mt-[30px] bg-[#FF7F00] hover:bg-[#e06f00] text-[#222222] font-semibold px-8 py-3 rounded-md transition-colors mx-auto">
+        <a href="/contact" style="display: inline-block; margin-top: 30px; background-color: #FF7F00; color: #222222; font-weight: 600; padding: 12px 32px; border-radius: 6px; text-decoration: none;">
           Get in Touch With Us
         </a>
 
