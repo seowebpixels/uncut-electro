@@ -7,28 +7,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Maximize equipment uptime, prevent unexpected breakdowns, and reduce operational costs with our advanced condition monitoring, vibration analysis, and laser shaft alignment services."
 >
   <div class="bg-[#222222] text-[#FFFFFF] min-h-screen">
-    <!-- Hero Section -->
-    <section class="py-16 md:py-24">
+
+    <!-- HERO SECTION (Starts 60px down from header) -->
+    <section class="pt-[60px] pb-12">
       <div class="container mx-auto px-4 max-w-6xl">
+        <!-- Grid aligns image top-to-top inline with the H1 content block -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           
-          <!-- Hero Text Content: Down 60px (pt-[60px]), Right 60px (pl-[60px]) -->
-          <div class="pt-[60px] pl-[60px]">
-            <span class="text-gray-400 text-sm font-semibold tracking-wider uppercase">Predictive Maintenance & Reliability</span>
-            <h1 class="text-3xl md:text-5xl font-bold mt-2 mb-6 leading-tight text-[#FFFFFF]">
+          <!-- Hero Left Column (Shifted 60px away from left border) -->
+          <div class="pl-[60px]">
+            <span class="text-gray-400 text-sm font-semibold tracking-wider uppercase block mb-2">
+              Predictive Maintenance & Reliability
+            </span>
+            <!-- H1 Header: White -->
+            <h1 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
               Condition Monitoring Services
             </h1>
             <p class="text-lg text-gray-300 leading-relaxed">
               Transition from costly reactive firefighting to proactive machinery healthcare. Our condition monitoring services provide real-time insights into machine health—stopping catastrophic failures before they happen.
             </p>
-            <!-- Schedule Button: Down 30px (mt-[30px]) -->
+            <!-- Schedule an Inspection Button: 30px below paragraph -->
             <a href="#contact" class="inline-block mt-[30px] bg-[#FF7F00] hover:bg-[#e06f00] text-[#222222] font-bold px-6 py-3 rounded-md transition-colors">
               Schedule an Inspection
             </a>
           </div>
           
-          <!-- Image Container: Down 85px (mt-[85px]) -->
-          <div class="rounded-xl overflow-hidden shadow-2xl border border-neutral-800 mt-[85px]">
+          <!-- Hero Right Column: Image inline with H1 -->
+          <div class="rounded-xl overflow-hidden shadow-2xl border border-neutral-800">
             <img 
               src="/cs-condition-monitoring-shaft-alignment.avif" 
               alt="Laser shaft alignment system on industrial machinery" 
@@ -40,44 +45,55 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </section>
 
-    <!-- Overview Section (Centered) -->
-    <section class="py-16 border-t border-neutral-800 text-center">
+    <!-- OVERVIEW SECTION (40px below hero image, Center Aligned, H2 in Orange) -->
+    <section class="mt-[40px] py-12 border-t border-neutral-800 text-center">
       <div class="container mx-auto px-4 max-w-4xl text-center flex flex-col items-center">
-        <div class="text-center mb-12 w-full">
-          <h2 class="text-3xl font-bold text-[#FF7F00] mb-4 text-center">What is Condition Monitoring?</h2>
-          <div class="w-20 h-1 bg-[#FF7F00] mx-auto rounded"></div>
-        </div>
+        
+        <!-- H2 Header: Orange -->
+        <h2 class="text-3xl font-bold text-[#FF7F00] mb-4 text-center">
+          What is Condition Monitoring?
+        </h2>
+        <div class="w-20 h-1 bg-[#FF7F00] mx-auto rounded mb-8"></div>
         
         <p class="text-lg text-gray-300 leading-relaxed mb-8 text-center mx-auto max-w-3xl">
           <strong class="text-white">Condition Monitoring (CM)</strong> is the continuous or periodic measurement of physical parameters—such as vibration, temperature, oil purity, and thermal profiles—in operating machinery. By tracking changes in these indicators over time, we can detect early-stage mechanical degradation long before functional failure occurs.
         </p>
 
-        <div class="bg-[#2a2a2a] border-t-4 border-[#FF7F00] p-6 rounded-lg shadow-sm my-8 text-center mx-auto max-w-3xl">
-          <h3 class="text-xl font-bold text-white mb-2 text-center">How We Elevate Your Maintenance Strategy</h3>
+        <div class="bg-[#2a2a2a] border-t-4 border-[#FF7F00] p-6 rounded-lg shadow-sm my-4 text-center mx-auto max-w-3xl">
+          <!-- H3 Header: White -->
+          <h3 class="text-xl font-bold text-white mb-2 text-center">
+            How We Elevate Your Maintenance Strategy
+          </h3>
           <p class="text-gray-300 leading-relaxed text-center">
             Unplanned downtime drains capital, interrupts production, and leads to expensive secondary damage. We go beyond simply generating data logs—our certified reliability engineers deliver <strong>clear, actionable diagnosis</strong> and targeted recommendations. We help you extend machinery lifespan, optimize lube cycles, lower energy consumption, and plan maintenance during scheduled outages on <em>your</em> terms.
           </p>
         </div>
+
       </div>
     </section>
 
-    <!-- Comprehensive Services Grid (Centered) -->
-    <section class="py-16 border-t border-neutral-800 text-center">
-      <div class="container mx-auto px-4 max-w-6xl text-center">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl font-bold text-[#FF7F00] mb-4 text-center">Our Condition Monitoring Solutions</h2>
+    <!-- SOLUTIONS GRID SECTION (Center Aligned, H2 in Orange, H3 in White) -->
+    <section class="py-12 border-t border-neutral-800 text-center">
+      <div class="container mx-auto px-4 max-w-6xl text-center flex flex-col items-center">
+        
+        <div class="text-center mb-12">
+          <!-- H2 Header: Orange -->
+          <h2 class="text-3xl font-bold text-[#FF7F00] mb-4 text-center">
+            Our Condition Monitoring Solutions
+          </h2>
           <p class="text-gray-300 max-w-2xl mx-auto text-center">
             We combine advanced Non-Destructive Testing (NDT) technologies with deep engineering expertise to safeguard critical plant assets.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center justify-items-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center w-full">
           
           <!-- Card 1 -->
           <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center flex flex-col items-center w-full">
-            <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4 mx-auto">
+            <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4">
               01
             </div>
+            <!-- H3 Header: White -->
             <h3 class="text-xl font-bold text-white mb-3 text-center">Condition Monitoring Programs</h3>
             <p class="text-gray-300 text-sm leading-relaxed text-center">
               Turnkey predictive maintenance management tailored to your plant criticality matrix. We set baseline parameters, perform regular route inspections, analyze trending data, and provide easy-to-read executive summary reports with clear repair priorities.
@@ -86,9 +102,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
           <!-- Card 2 -->
           <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center flex flex-col items-center w-full">
-            <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4 mx-auto">
+            <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4">
               02
             </div>
+            <!-- H3 Header: White -->
             <h3 class="text-xl font-bold text-white mb-3 text-center">Vibration Analysis</h3>
             <p class="text-gray-300 text-sm leading-relaxed text-center">
               Vibration is the heart rate of rotating equipment. Using FFT spectrum analysis, peakVue technology, and phase measurements, we pinpoint unbalance, misalignment, roller bearing defects, gear tooth wear, structural looseness, and resonance early.
@@ -97,9 +114,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
           <!-- Card 3 -->
           <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center flex flex-col items-center w-full">
-            <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4 mx-auto">
+            <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4">
               03
             </div>
+            <!-- H3 Header: White -->
             <h3 class="text-xl font-bold text-white mb-3 text-center">Precision Shaft Alignment</h3>
             <p class="text-gray-300 text-sm leading-relaxed text-center">
               Misalignment accounts for up to 50% of rotating machinery breakdowns. Utilizing state-of-the-art laser alignment tools, we restore horizontal, vertical, and angular alignment within OEM tolerances—reducing seal strain, power consumption, and bearing stress.
@@ -108,9 +126,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
           <!-- Card 4 -->
           <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center flex flex-col items-center w-full">
-            <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4 mx-auto">
+            <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4">
               04
             </div>
+            <!-- H3 Header: White -->
             <h3 class="text-xl font-bold text-white mb-3 text-center">Oil & Fluid Analysis</h3>
             <p class="text-gray-300 text-sm leading-relaxed text-center">
               Oil is the liquid blood of your machine. Our laboratory fluid analysis tests for wear metals, particle counts, water contamination, viscosity index, and additive depletion—letting you assess component health and safely extend oil drain intervals.
@@ -119,9 +138,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
           <!-- Card 5 -->
           <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center flex flex-col items-center w-full">
-            <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4 mx-auto">
+            <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4">
               05
             </div>
+            <!-- H3 Header: White -->
             <h3 class="text-xl font-bold text-white mb-3 text-center">Infrared Thermography</h3>
             <p class="text-gray-300 text-sm leading-relaxed text-center">
               Non-contact thermal imaging detects invisible electrical phase imbalances, loose connections, overloaded circuits, friction hotspots, and refractory insulation leaks—preventing electrical fires and component burnouts.
@@ -130,9 +150,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
           <!-- Card 6 -->
           <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center flex flex-col items-center w-full">
-            <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4 mx-auto">
+            <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4">
               06
             </div>
+            <!-- H3 Header: White -->
             <h3 class="text-xl font-bold text-white mb-3 text-center">Machinery Lubrication</h3>
             <p class="text-gray-300 text-sm leading-relaxed text-center">
               Improper lubrication causes over 70% of premature bearing failures. We design and audit best-in-class lubrication programs: establishing correct lubricant selection, precise regreasing volumes/frequencies, contamination control, and storage solutions.
@@ -142,10 +163,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <!-- Card 7 -->
           <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all lg:col-span-3 text-center flex flex-col items-center w-full">
             <div class="flex flex-col items-center gap-4 text-center w-full">
-              <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex-shrink-0 flex items-center justify-center font-bold text-xl mx-auto">
+              <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex-shrink-0 flex items-center justify-center font-bold text-xl">
                 07
               </div>
               <div class="text-center w-full">
+                <!-- H3 Header: White -->
                 <h3 class="text-xl font-bold text-white mb-2 text-center">Root Cause Failure Analysis (RCFA)</h3>
                 <p class="text-gray-300 text-sm leading-relaxed max-w-3xl mx-auto text-center">
                   When a component fails, repairing it without identifying the underlying cause invites repeat failures. Our forensic engineering team conducts thorough Root Cause Failure Analysis—evaluating fractography, operational history, lubrication quality, and alignment logs to implement permanent corrective measures.
@@ -158,21 +180,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </section>
 
-    <!-- Bottom CTA Section -->
-    <section id="contact" class="py-16 text-center border-t border-neutral-800">
+    <!-- BOTTOM CTA SECTION (Centered, H2 in Orange, Button 30px below paragraph) -->
+    <section id="contact" class="py-12 text-center border-t border-neutral-800">
       <div class="container mx-auto px-4 max-w-4xl text-center flex flex-col items-center">
-        <!-- Headline moved down 40px (mt-[40px]) -->
-        <h2 class="text-3xl font-bold text-[#FF7F00] mb-4 mt-[40px] text-center">
+        
+        <!-- H2 Header: Orange -->
+        <h2 class="text-3xl font-bold text-[#FF7F00] mb-4 text-center">
           Ready to Eliminate Unplanned Downtime?
         </h2>
-        <p class="text-gray-300 text-lg mb-8 text-center mx-auto">
+        <p class="text-gray-300 text-lg text-center mx-auto max-w-2xl">
           Partner with our reliability specialists to implement a condition monitoring schedule customized to your plant's operational demands.
         </p>
-        <!-- Button moved down 40px (mt-[40px]) -->
-        <a href="/contact" class="bg-[#FF7F00] text-[#222222] hover:bg-[#e06f00] font-semibold px-8 py-3 rounded-md transition-colors inline-block mt-[40px] mx-auto">
+        
+        <!-- Get in Touch Button: 30px below paragraph -->
+        <a href="/contact" class="inline-block mt-[30px] bg-[#FF7F00] hover:bg-[#e06f00] text-[#222222] font-semibold px-8 py-3 rounded-md transition-colors mx-auto">
           Get in Touch With Us
         </a>
+
       </div>
     </section>
+
   </div>
 </BaseLayout>
