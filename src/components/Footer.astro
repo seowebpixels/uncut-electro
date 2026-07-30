@@ -3,11 +3,13 @@
 ---
 
 <footer class="site-footer">
-  <div class="container footer-container">
-    <div class="footer-col footer-brand-col">
+  <div class="footer-container">
+    
+    <!-- Column 1: Brand & Details -->
+    <div class="footer-col brand-col">
       <div class="footer-logo">
         <a href="/" class="logo-link">
-          <img src="/uncut-logo-new.avif" alt="Uncut Electro Mechanical Engineering Logo" class="site-logo" width="220" height="220">
+          <img src="/uncut-logo-new.avif" alt="Uncut Electro Mechanical Engineering Logo" class="site-logo" width="220" height="auto" />
         </a>
       </div>
       <p class="footer-bio">
@@ -18,6 +20,7 @@
       </div>
     </div>
 
+    <!-- Column 2: Quick Links -->
     <div class="footer-col">
       <h3>Quick Links</h3>
       <ul class="footer-links">
@@ -28,6 +31,7 @@
       </ul>
     </div>
 
+    <!-- Column 3: Industries Served -->
     <div class="footer-col">
       <h3>Industries Served</h3>
       <ul class="footer-links">
@@ -39,26 +43,40 @@
       </ul>
     </div>
 
+    <!-- Column 4: Contact & Hub -->
     <div class="footer-col">
       <h3>Contact & Hub</h3>
       <ul class="footer-contact-list">
         <li>
           <span class="footer-icon">📍</span>
-          <span>Central Workshop Hub:<br>30 Van Eck Street<br>Chamdor<br>Krugersdorp<br>1754<br>Gauteng<br>South Africa</span>
+          <div>
+            <strong>Central Workshop Hub:</strong><br />
+            30 Van Eck Street<br />
+            Chamdor<br />
+            Krugersdorp<br />
+            1754<br />
+            Gauteng<br />
+            South Africa
+          </div>
         </li>
         <li>
           <span class="footer-icon">📞</span>
-          <span>Emergency Line:<br><a href="tel:0795059510">079 505 9510</a> (24/7 Active)</span>
+          <div>
+            <strong>Emergency Line:</strong><br />
+            <a href="tel:0795059510" class="phone-link">079 505 9510</a> (24/7 Active)
+          </div>
         </li>
       </ul>
     </div>
+
   </div>
 
+  <!-- Footer Bottom Bar -->
   <div class="footer-bottom">
-    <div class="container footer-bottom-container">
+    <div class="footer-bottom-container">
       <p>&copy; 2026 Uncut Electro Mechanical Engineering. All Rights Reserved.</p>
       <p class="footer-credit">
-        Website Designed & Developed by <a href="https://www.webdesignpros.co.za" target="_blank" rel="noopener">Web Design Pros</a>
+        Website Designed & Developed by <a href="https://www.webdesignpros.co.za" target="_blank" rel="noopener" class="designer-link">Web Design Pros</a>
       </p>
       <div class="footer-bottom-links">
         <a href="/privacy-policy">Privacy Policy</a>
@@ -67,3 +85,169 @@
     </div>
   </div>
 </footer>
+
+<style>
+  /* Footer Base Styling */
+  .site-footer {
+    background-color: #000000;
+    color: #FFFFFF;
+    border-top: 3px solid #FF7F00; /* Top Orange Border */
+    padding-top: 56px;
+    padding-bottom: 24px;
+    font-size: 14px;
+    line-height: 1.6;
+    width: 100%;
+  }
+
+  /* 4-Column Grid Container */
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+
+  /* Responsive breakdown for tablet and mobile screens */
+  @media (max-width: 992px) {
+    .footer-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Column Headings */
+  .footer-col h3 {
+    color: #FF7F00;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Brand Column */
+  .brand-col .site-logo {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .footer-bio {
+    color: #D1D5DB;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+  }
+
+  .footer-iso-badge {
+    display: inline-block;
+    background-color: rgba(255, 127, 0, 0.15);
+    color: #FF7F00;
+    border: 1px solid #FF7F00;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  /* Unordered Link Lists */
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 12px;
+  }
+
+  .footer-links a {
+    color: #D1D5DB;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer-links a:hover {
+    color: #FF7F00;
+  }
+
+  /* Contact List */
+  .footer-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-contact-list li {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: #D1D5DB;
+  }
+
+  .footer-icon {
+    font-size: 1.2rem;
+  }
+
+  .phone-link {
+    color: #FF7F00;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .phone-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Footer Bottom Bar */
+  .footer-bottom {
+    margin-top: 48px;
+    border-top: 1px solid #262626;
+    padding-top: 24px;
+  }
+
+  .footer-bottom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    color: #9CA3AF;
+    font-size: 0.875rem;
+  }
+
+  /* Web Design Pros Link in Orange */
+  .designer-link {
+    color: #FF7F00;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .designer-link:hover {
+    text-decoration: underline;
+  }
+
+  .footer-bottom-links {
+    display: flex;
+    gap: 16px;
+  }
+
+  .footer-bottom-links a {
+    color: #9CA3AF;
+    text-decoration: none;
+  }
+
+  .footer-bottom-links a:hover {
+    color: #FFFFFF;
+  }
+</style>
