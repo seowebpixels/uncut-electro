@@ -1,0 +1,206 @@
+---
+// src/pages/industries.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Industries Served | Uncut Electro-Mechanical Engineering" 
+  description="Specialized electro-mechanical engineering, 24/7 emergency support, and heavy industrial maintenance solutions across South Africa."
+>
+  <div class="industries-page">
+    
+    <!-- Main Title & Intro Header -->
+    <header class="page-header">
+      <h1>Industries Served</h1>
+      <p class="intro-text">
+        At Uncut Electro-Mechanical Engineering, we provide precision electrical and mechanical engineering solutions tailored to the rigorous operational environments of South Africa's primary industrial sectors. From deep-level underground mining to high-voltage municipal power distribution, explore how our certified repair, rewind, and 24/7 breakdown services support your sector below.
+      </p>
+    </header>
+
+    <!-- Quick Jump Navigation -->
+    <nav class="quick-jump">
+      <a href="#mining">Mining & Minerals</a>
+      <a href="#power-gen">Power Generation</a>
+      <a href="#manufacturing">Heavy Manufacturing</a>
+      <a href="#municipal">Municipal Infrastructure</a>
+      <a href="#petrochemical">Petrochemical Plants</a>
+    </nav>
+
+    <!-- Detailed Industry Sections -->
+    <div class="industry-sections">
+      
+      <!-- 1. Mining & Minerals -->
+      <section id="mining" class="industry-card">
+        <h2>Mining & Minerals</h2>
+        <p>
+          Mining machinery operates under extreme abrasive conditions, heavy mechanical shock loads, and high humidity. We engineer ruggedized solutions and rapid repair turnarounds for high-tonnage haulage systems, underground pumps, and processing equipment to minimize costly mine downtime.
+        </p>
+        <ul>
+          <li>Heavy-Duty AC/DC Motor Rewinding & Overhauls</li>
+          <li>Slurry & High-Head Dewatering Pump Maintenance</li>
+          <li>Vibration Analysis & Thermographic Condition Monitoring</li>
+          <li>24/7 Rapid On-Site Breakdown Dispatch</li>
+        </ul>
+      </section>
+
+      <!-- 2. Power Generation -->
+      <section id="power-gen" class="industry-card">
+        <h2>Power Generation</h2>
+        <p>
+          Continuous grid stability requires flawless performance from high-voltage transformers and generation assets. We collaborate with municipal grids, independent power producers, and industrial plants to maintain electrical integrity and extend equipment lifespan.
+        </p>
+        <ul>
+          <li>Medium & High Voltage Switchgear Servicing</li>
+          <li>Transformer Oil Purification, Rewinding & Testing</li>
+          <li>Generator Stator & Rotor Mechanical Overhauls</li>
+          <li>Protection Relay Calibration & Substation Testing</li>
+        </ul>
+      </section>
+
+      <!-- 3. Heavy Manufacturing -->
+      <section id="manufacturing" class="industry-card">
+        <h2>Heavy Manufacturing</h2>
+        <p>
+          Continuous manufacturing lines demand synchronized motion control and reliable motive power. Our proactive diagnostics and emergency repair capabilities protect steel mills, automotive plants, paper mills, and heavy fabrication hubs against unexpected stoppages.
+        </p>
+        <ul>
+          <li>Variable Speed Drive (VSD) & Electric Motor Alignment</li>
+          <li>Dynamic Shaft Balancing & Laser Alignment</li>
+          <li>Scheduled Plant Shutdown Maintenance Support</li>
+          <li>Emergency Motor & Gearbox Rebuilds</li>
+        </ul>
+      </section>
+
+      <!-- 4. Municipal Infrastructure -->
+      <section id="municipal" class="industry-card">
+        <h2>Municipal Infrastructure</h2>
+        <p>
+          Public water distribution, sewage treatment works, and regional electrical sub-transmission systems form the backbone of local services. We deliver ISO-aligned engineering services to keep public utility plants reliable and compliant.
+        </p>
+        <ul>
+          <li>Submersible & Centrifugal Pump Servicing</li>
+          <li>Municipal Substation Overhauls & Retrofits</li>
+          <li>Emergency Standby Generator Maintenance</li>
+          <li>Dedicated 24/7 Municipal Emergency Support</li>
+        </ul>
+      </section>
+
+      <!-- 5. Petrochemical Plants -->
+      <section id="petrochemical" class="industry-card">
+        <h2>Petrochemical Plants</h2>
+        <p>
+          Processing volatile materials demands stringent safety protocols and flameproof-certified equipment standards. Our technical teams bring extensive experience working on specialized electro-mechanical machinery within hazardous refinery zones.
+        </p>
+        <ul>
+          <li>Flameproof (Ex) & Explosion-Proof Motor Servicing</li>
+          <li>High-Spec Class H Thermal Insulation & Analysis</li>
+          <li>Substation Maintenance in Hazardous Environments</li>
+          <li>Root Cause Failure Analysis & Reliability Engineering</li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .industries-page {
+    padding-top: 60px;   /* Content starts 60px below Header */
+    padding-left: 30px;  /* 30px away from the left border */
+    padding-right: 30px; /* Balanced right margin */
+    padding-bottom: 80px;
+    max-width: 1200px;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    color: #FF7F00; /* Primary orange */
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .intro-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #E0E0E0;
+    max-width: 900px;
+    margin-bottom: 36px;
+  }
+
+  /* Jump Bar */
+  .quick-jump {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+
+  .quick-jump a {
+    background-color: #1A1A1A;
+    color: #FF7F00;
+    border: 1px solid #FF7F00;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .quick-jump a:hover {
+    background-color: #FF7F00;
+    color: #000000;
+  }
+
+  /* Industry Card Sections */
+  .industry-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+
+  .industry-card {
+    background-color: #1A1A1A;
+    border-left: 4px solid #FF7F00;
+    padding: 28px;
+    border-radius: 0 6px 6px 0;
+    scroll-margin-top: 110px; /* Offset to prevent header overlap when clicking anchor links */
+  }
+
+  .industry-card h2 {
+    font-size: 1.75rem;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+  }
+
+  .industry-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #CCCCCC;
+    margin-bottom: 20px;
+  }
+
+  .industry-card ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px;
+  }
+
+  .industry-card li {
+    color: #E0E0E0;
+    font-size: 0.95rem;
+    position: relative;
+    padding-left: 20px;
+  }
+
+  .industry-card li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #FF7F00;
+    font-size: 0.85rem;
+  }
+</style>
