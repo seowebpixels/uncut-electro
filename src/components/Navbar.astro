@@ -10,8 +10,7 @@
       <img 
         src="/uncut-logo-new.avif" 
         alt="Uncut Electro Mechanical Engineering Logo" 
-        width="180" 
-        height="auto"
+        class="site-logo"
       />
     </a>
 
@@ -35,7 +34,8 @@
           </ul>
         </li>
 
-        <li><a href="/#advantages">About Us</a></li>
+        <li><a href="/#workflow">Our Process</a></li>
+        <li><a href="/#advantages">Why Choose Us</a></li>
         <li><a href="/#faq">FAQ</a></li>
       </ul>
     </nav>
@@ -65,17 +65,26 @@
   .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 12px 24px;
+    padding: 0 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    min-height: 100px; /* Provides ample height for the logo placement */
   }
 
-  .brand-logo img {
+  /* User Logo Specs */
+  .site-logo {
+    width: 220px;
+    height: 380px;
+    max-height: 220px;
+    object-fit: contain;
     display: block;
-    height: auto;
-    max-height: 50px;
-    width: auto;
+    margin-top: -30px !important; /* Shifts the logo up by 30px */
+  }
+
+  .brand-logo {
+    display: inline-block;
+    text-decoration: none;
   }
 
   /* Navigation Links */
