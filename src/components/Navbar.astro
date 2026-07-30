@@ -1,110 +1,205 @@
 ---
-// src/components/Navbar.astro
+/* src/components/Navbar.astro */
 ---
 
-<header class="navbar">
-  <div class="logo-container">
-    <a href="#home">
+<header class="site-header">
+  <div class="nav-container">
+    
+    <!-- Logo -->
+    <a href="/" class="brand-logo">
       <img 
         src="/uncut-logo-new.avif" 
-        alt="UNCUT ELECTRO-MECHANICAL ENGINEERING Logo" 
-        class="logo-img"
+        alt="Uncut Electro Mechanical Engineering Logo" 
+        width="180" 
+        height="auto"
       />
     </a>
-  </div>
-  <nav class="nav-links">
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#about">About Us</a></li>
+
+    <!-- Navigation Links -->
+    <nav class="main-nav">
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        
+        <!-- Services Dropdown -->
+        <li class="dropdown">
+          <a href="/#services" class="dropdown-toggle">
+            Services <span class="arrow">▾</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="/condition-monitoring">Condition Monitoring</a></li>
+            <li><a href="/electrical-substation">Electrical Substation</a></li>
+            <li><a href="/industrial-generators">Industrial Generators</a></li>
+            <li><a href="/motor-rewinding">Motor Rewinding</a></li>
+            <li><a href="/switchgears">Switchgears</a></li>
+            <li><a href="/transformers">Transformers</a></li>
+          </ul>
+        </li>
+
+        <li><a href="/#workflow">Our Process</a></li>
+        <li><a href="/#advantages">Why Choose Us</a></li>
+        <li><a href="/#faq">FAQ</a></li>
       </ul>
-  </nav>
+    </nav>
+
+    <!-- Emergency Call CTA Button -->
+    <div class="nav-cta">
+      <a href="tel:0795059510" class="btn-emergency">
+        <span>📞 24/7 Support</span>
+      </a>
+    </div>
+
+  </div>
 </header>
 
 <style>
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2.5rem;
-    background-color: #000000;
-    color: #ffffff;
-    border-bottom: 2px solid #FF7F00; /* Orange border on bottom */
+  /* Header Base Styling */
+  .site-header {
     position: sticky;
     top: 0;
     z-index: 1000;
+    background-color: #000000;
+    border-bottom: 2px solid #FF7F00;
+    width: 100%;
   }
 
-  .logo-container img {
-    width: 220px;
-    height: 220px;
-    max-height: 220px;
-    object-fit: contain;
+  /* Nav Container */
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand-logo img {
     display: block;
+    height: auto;
+    max-height: 50px;
+    width: auto;
   }
 
-  .nav-links ul {
+  /* Navigation Links */
+  .nav-links {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 28px;
     margin: 0;
     padding: 0;
   }
 
   .nav-links a {
-    color: #ffffff;
+    color: #FFFFFF;
     text-decoration: none;
+    font-size: 0.95rem;
     font-weight: 600;
-    font-family: sans-serif;
     text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-    transition: color 0.3s ease;
+    letter-spacing: 0.03em;
+    transition: color 0.2s ease;
   }
 
   .nav-links a:hover {
     color: #FF7F00;
   }
 
-  /* Specific styling for buttons requiring black text */
-  .cta-button {
-    background-color: #FF7F00; /* Orange background */
-    color: #000000 !important;   /* Strictly black text */
-    padding: 0.6rem 1.2rem;
+  /* Dropdown Wrapper */
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+  }
+
+  .arrow {
+    font-size: 0.8rem;
+    color: #FF7F00;
+    transition: transform 0.2s ease;
+  }
+
+  /* Dropdown Container (Orange Box) */
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 250px;
+    background-color: #FF7F00;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+    list-style: none;
+    padding: 8px;
+    margin: 8px 0 0 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.25s ease;
+  }
+
+  /* Reveal Dropdown on Hover */
+  .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown:hover .arrow {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-menu li {
+    margin-bottom: 6px;
+  }
+
+  .dropdown-menu li:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Individual Sub Menu Box Items */
+  .dropdown-menu li a {
+    display: block;
+    padding: 8px 12px;
+    font-size: 0.875rem;
+    color: #000000;
+    font-weight: 300; /* Thin text font */
+    text-transform: none;
+    background-color: #FF7F00;
+    border: 1px solid #000000; /* Thin black border around each box */
     border-radius: 4px;
-    transition: background-color 0.3s ease, opacity 0.3s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 
-  .cta-button:hover {
-    background-color: #e67300; /* Slightly darker orange on hover */
+  .dropdown-menu li a:hover {
+    background-color: #000000;
+    color: #FF7F00;
+  }
+
+  /* Emergency CTA Button */
+  .btn-emergency {
+    background-color: #FF7F00;
     color: #000000 !important;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.2s ease, transform 0.1s ease;
   }
 
-  /* Mobile-only adjustments (Screens 768px wide or smaller) */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      gap: 0.5rem;
-      padding: 0.5rem 1rem 0.75rem 1rem; /* Reduced padding to collapse navbar height */
-      border-bottom: 2px solid #FF7F00;  /* Native border sits at the true bottom */
-    }
+  .btn-emergency:hover {
+    background-color: #E67200;
+    transform: translateY(-1px);
+  }
 
-    /* Pulls logo up and shrinks empty spacing inside the image box */
-    .logo-container img {
-      margin-top: -40px;
-      margin-bottom: -35px;
-    }
-
-    /* Pulls menu row up cleanly without leaving leftover height */
-    .nav-links {
-      margin-top: 25px;
-    }
-
-    .nav-links ul {
-      gap: 1.25rem;
-      flex-wrap: wrap;
-      justify-content: center;
+  @media (max-width: 850px) {
+    .main-nav {
+      display: none;
     }
   }
 </style>
