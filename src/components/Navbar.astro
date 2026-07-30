@@ -14,8 +14,17 @@
       />
     </a>
 
+    <!-- Orange Mobile Hamburger Button -->
+    <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+      <svg class="hamburger-icon" viewBox="0 0 24 24" fill="none" stroke="#FF7F00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6" x2="21" y2="6" class="line-top"></line>
+        <line x1="3" y1="12" x2="21" y2="12" class="line-middle"></line>
+        <line x1="3" y1="18" x2="21" y2="18" class="line-bottom"></line>
+      </svg>
+    </button>
+
     <!-- Navigation Links -->
-    <nav class="main-nav">
+    <nav class="main-nav" id="main-nav">
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
         
@@ -40,8 +49,28 @@
       </ul>
     </nav>
 
+    <!-- Emergency Call CTA Button -->
+    <div class="nav-cta">
+      <a href="tel:0795059510" class="btn-emergency">
+        <span>📞 24/7 Support</span>
+      </a>
+    </div>
+
   </div>
 </header>
+
+<script>
+  // Mobile Menu Toggle Script
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const mainNav = document.getElementById('main-nav');
+
+  if (mobileToggle && mainNav) {
+    mobileToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('is-open');
+      mobileToggle.classList.toggle('is-active');
+    });
+  }
+</script>
 
 <style>
   /* Header Base Styling */
@@ -62,7 +91,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-height: 100px; /* Provides ample height for the logo placement */
+    min-height: 100px;
   }
 
   /* User Logo Specs */
@@ -72,7 +101,7 @@
     max-height: 220px;
     object-fit: contain;
     display: block;
-    margin-top: -30px !important; /* Shifts the logo up by 30px */
+    margin-top: -30px !important;
   }
 
   .brand-logo {
@@ -80,7 +109,7 @@
     text-decoration: none;
   }
 
-  /* Navigation Links */
+  /* Navigation Links (Desktop) */
   .nav-links {
     list-style: none;
     display: flex;
@@ -166,10 +195,10 @@
     padding: 8px 12px;
     font-size: 0.875rem;
     color: #000000;
-    font-weight: 300; /* Thin text font */
+    font-weight: 300;
     text-transform: none;
     background-color: #FF7F00;
-    border: 1px solid #000000; /* Thin black border around each box */
+    border: 1px solid #000000;
     border-radius: 4px;
     transition: background-color 0.2s ease, color 0.2s ease;
   }
@@ -198,9 +227,74 @@
     transform: translateY(-1px);
   }
 
-  @media (max-width: 850px) {
+  /* Mobile Toggle Button (Hidden on Desktop) */
+  .mobile-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    outline: none;
+  }
+
+  .hamburger-icon {
+    width: 32px;
+    height: 32px;
+    display: block;
+  }
+
+  /* ===================================================
+     MOBILE RESPONSIVE STYLES (Screen widths <= 900px)
+     =================================================== */
+  @media (max-width: 900px) {
+    .mobile-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Hide Desktop Nav Drawer initially */
     .main-nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #000000;
+      border-bottom: 3px solid #FF7F00;
+      padding: 20px 24px;
       display: none;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+    }
+
+    /* Open State */
+    .main-nav.is-open {
+      display: block;
+    }
+
+    .nav-links {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .nav-links li {
+      width: 100%;
+    }
+
+    /* Mobile Dropdown Styling */
+    .dropdown-menu {
+      position: static;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+      width: 100%;
+      box-shadow: none;
+      margin-top: 10px;
+    }
+
+    .nav-cta {
+      display: none; /* Keeps mobile header clean; CTA can sit in mobile drawer if desired */
     }
   }
 </style>
