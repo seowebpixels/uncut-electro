@@ -2,10 +2,11 @@
 // src/layouts/BaseLayout.astro
 import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title?: string;
-  description?: string; // <--- Add this line (the '?' makes it optional)
+  description?: string;
 }
 
 const { title = "UNCUT ELECTRO-MECHANICAL ENGINEERING", description } = Astro.props;
@@ -17,29 +18,36 @@ const { title = "UNCUT ELECTRO-MECHANICAL ENGINEERING", description } = Astro.pr
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+
+    <style is:global>
+      /* Global site resets and defaults */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #222222;
+        color: #ffffff;
+        font-family: sans-serif;
+      }
+
+      /* Global rule for buttons to ensure black text as requested previously */
+      button, .btn-primary {
+        color: #000000;
+      }
+    </style>
   </head>
+
   <body>
     <Navbar />
-    <slot /> <!-- Your page components (Hero, Services, etc.) will render here -->
+
+    <main>
+      <slot /> <!-- Your page components (Hero, Services, etc.) will render here -->
+    </main>
+
+    <Footer />
   </body>
 </html>
-
-<style is:global>
-  /* Global site resets and defaults */
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  body {
-    background-color: #222222;
-    color: #ffffff;
-    font-family: sans-serif;
-  }
-
-  /* Global rule for buttons to ensure black text as requested previously */
-  button, .btn-primary {
-    color: #000000;
-  }
-</style>
