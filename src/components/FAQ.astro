@@ -1,15 +1,24 @@
-<!-- FAQ Section -->
+---
+// FAQ.astro
+---
+
 <section class="faq-section" id="faq">
-  <div class="container">
-    <span class="hero-badge">Frequently Asked Questions</span>
-    <h2>Common Technical & Operational Queries</h2>
-    <p class="section-subtitle">Get clear answers regarding our workshop capabilities, on-site diagnostics, and emergency response pipelines.</p>
+  <div class="faq-container">
     
-    <div class="faq-container">
-      <!-- Item 1 -->
+    <!-- Section Header -->
+    <div class="faq-header">
+      <span class="faq-badge">FREQUENTLY ASKED QUESTIONS</span>
+      <h2 class="faq-title">Common Technical & Operational Queries</h2>
+      <p class="faq-subtitle">Get clear answers regarding our workshop capabilities, on-site diagnostics, and emergency response pipelines.</p>
+    </div>
+    
+    <!-- Questions Container -->
+    <div class="faq-list">
+      
+      <!-- Question 1 -->
       <details class="faq-item">
         <summary class="faq-question">
-          <span>What is your standard turnaround time for emergency motor rewinds?</span>
+          <span class="question-text">What is your standard turnaround time for emergency motor rewinds?</span>
           <span class="faq-icon">+</span>
         </summary>
         <div class="faq-answer">
@@ -17,10 +26,10 @@
         </div>
       </details>
 
-      <!-- Item 2 -->
+      <!-- Question 2 -->
       <details class="faq-item">
         <summary class="faq-question">
-          <span>Do you offer on-site fault-finding or must equipment be brought to Krugersdorp?</span>
+          <span class="question-text">Do you offer on-site fault-finding or must equipment be brought to Krugersdorp?</span>
           <span class="faq-icon">+</span>
         </summary>
         <div class="faq-answer">
@@ -28,10 +37,10 @@
         </div>
       </details>
 
-      <!-- Item 3 -->
+      <!-- Question 3 -->
       <details class="faq-item">
         <summary class="faq-question">
-          <span>Do you handle high-voltage transformer maintenance and oil testing?</span>
+          <span class="question-text">Do you handle high-voltage transformer maintenance and oil testing?</span>
           <span class="faq-icon">+</span>
         </summary>
         <div class="faq-answer">
@@ -39,10 +48,10 @@
         </div>
       </details>
 
-      <!-- Item 4 -->
+      <!-- Question 4 -->
       <details class="faq-item">
         <summary class="faq-question">
-          <span>Are your engineering repairs and testing protocols ISO 9001 aligned?</span>
+          <span class="question-text">Are your engineering repairs and testing protocols ISO 9001 aligned?</span>
           <span class="faq-icon">+</span>
         </summary>
         <div class="faq-answer">
@@ -50,10 +59,10 @@
         </div>
       </details>
 
-      <!-- Item 5 -->
+      <!-- Question 5 -->
       <details class="faq-item">
         <summary class="faq-question">
-          <span>How quickly can emergency breakdown teams deploy to site?</span>
+          <span class="question-text">How quickly can emergency breakdown teams deploy to site?</span>
           <span class="faq-icon">+</span>
         </summary>
         <div class="faq-answer">
@@ -61,10 +70,10 @@
         </div>
       </details>
 
-      <!-- Item 6 -->
+      <!-- Question 6 -->
       <details class="faq-item">
         <summary class="faq-question">
-          <span>What condition monitoring services do you provide to prevent unexpected failures?</span>
+          <span class="question-text">What condition monitoring services do you provide to prevent unexpected failures?</span>
           <span class="faq-icon">+</span>
         </summary>
         <div class="faq-answer">
@@ -72,10 +81,10 @@
         </div>
       </details>
 
-      <!-- Item 7 -->
+      <!-- Question 7 -->
       <details class="faq-item">
         <summary class="faq-question">
-          <span>Can your team overhaul industrial generators and HV switchgear?</span>
+          <span class="question-text">Can your team overhaul industrial generators and HV switchgear?</span>
           <span class="faq-icon">+</span>
         </summary>
         <div class="faq-answer">
@@ -83,16 +92,160 @@
         </div>
       </details>
 
-      <!-- Item 8 -->
+      <!-- Question 8 -->
       <details class="faq-item">
         <summary class="faq-question">
-          <span>What types of industries do you service for electrical overhauls?</span>
+          <span class="question-text">What types of industries do you service for electrical overhauls?</span>
           <span class="faq-icon">+</span>
         </summary>
         <div class="faq-answer">
           <p>We service a wide spectrum of heavy industries, including mining and minerals processing, power generation, heavy manufacturing, municipal utilities, commercial complexes, and petrochemical plants.</p>
         </div>
       </details>
+
     </div>
   </div>
 </section>
+
+<style>
+  /* Base Section Styling */
+  .faq-section {
+    background-color: #222222;
+    color: #ffffff;
+    padding: 60px 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .faq-container {
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  /* Header Centering */
+  .faq-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .faq-badge {
+    color: #FF7F00;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .faq-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0 0 12px 0;
+    color: #ffffff;
+  }
+
+  @media (min-width: 768px) {
+    .faq-title {
+      font-size: 2.5rem;
+    }
+  }
+
+  .faq-subtitle {
+    color: #a3a3a3;
+    font-size: 1rem;
+    margin: 0 auto;
+    max-width: 600px;
+    line-height: 1.5;
+  }
+
+  /* FAQ List */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* Individual Card Box */
+  .faq-item {
+    background-color: #2d2d2d;
+    border: 1px solid #3d3d3d;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  /* SELECTED / OPEN STATE: Thin Orange Surround Border */
+  .faq-item[open] {
+    border: 1px solid #FF7F00 !important;
+    box-shadow: 0 4px 16px rgba(255, 127, 0, 0.15);
+  }
+
+  /* Question Header Row */
+  .faq-question {
+    padding: 20px 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    list-style: none;
+  }
+
+  /* Remove default browser arrow markers */
+  .faq-question::-webkit-details-marker,
+  .faq-question::marker {
+    display: none !important;
+    content: "";
+  }
+
+  /* Question Text - Centre Aligned */
+  .question-text {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
+    padding: 0 16px;
+    line-height: 1.4;
+  }
+
+  @media (min-width: 768px) {
+    .question-text {
+      font-size: 1.15rem;
+    }
+  }
+
+  /* Active Question Text Highlight */
+  .faq-item[open] .question-text {
+    color: #FF7F00;
+  }
+
+  /* Orange Plus Icon */
+  .faq-icon {
+    color: #FF7F00;
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1;
+    transition: transform 0.25s ease-in-out;
+    flex-shrink: 0;
+  }
+
+  /* Rotate icon into an 'X' when open */
+  .faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  /* Answer Body - Centre Aligned */
+  .faq-answer {
+    padding: 0 24px 22px 24px;
+    text-align: center;
+  }
+
+  .faq-answer p {
+    margin: 0;
+    color: #d1d5db;
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+</style>
