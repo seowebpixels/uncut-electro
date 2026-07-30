@@ -6,12 +6,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   title="Condition Monitoring & Predictive Maintenance | Machine Reliability Services"
   description="Maximize equipment uptime, prevent unexpected breakdowns, and reduce operational costs with our advanced condition monitoring, vibration analysis, and laser shaft alignment services."
 >
-  <div class="bg-[#222222] text-[#FFFFFF] min-h-screen pt-[60px]">
-    <!-- Hero Section (Shifted 60px to the right) -->
-    <section class="py-16 md:py-24 pl-[60px]">
+  <div class="bg-[#222222] text-[#FFFFFF] min-h-screen">
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24">
       <div class="container mx-auto px-4 max-w-6xl">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          <div>
+          
+          <!-- Hero Text Content: Down 60px (pt-[60px]), Right 60px (pl-[60px]) -->
+          <div class="pt-[60px] pl-[60px]">
             <span class="text-gray-400 text-sm font-semibold tracking-wider uppercase">Predictive Maintenance & Reliability</span>
             <h1 class="text-3xl md:text-5xl font-bold mt-2 mb-6 leading-tight text-[#FFFFFF]">
               Condition Monitoring Services
@@ -19,12 +21,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <p class="text-lg text-gray-300 leading-relaxed">
               Transition from costly reactive firefighting to proactive machinery healthcare. Our condition monitoring services provide real-time insights into machine health—stopping catastrophic failures before they happen.
             </p>
+            <!-- Schedule Button: Down 30px (mt-[30px]) -->
             <a href="#contact" class="inline-block mt-[30px] bg-[#FF7F00] hover:bg-[#e06f00] text-[#222222] font-bold px-6 py-3 rounded-md transition-colors">
               Schedule an Inspection
             </a>
           </div>
           
-          <!-- Image container shifted down 85px -->
+          <!-- Image Container: Down 85px (mt-[85px]) -->
           <div class="rounded-xl overflow-hidden shadow-2xl border border-neutral-800 mt-[85px]">
             <img 
               src="/cs-condition-monitoring-shaft-alignment.avif" 
@@ -32,15 +35,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               class="w-full h-auto object-cover block"
             />
           </div>
+
         </div>
       </div>
     </section>
 
     <!-- Overview Section (Centered) -->
     <section class="py-16 border-t border-neutral-800 text-center">
-      <div class="container mx-auto px-4 max-w-4xl text-center">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-[#FF7F00] mb-4">What is Condition Monitoring?</h2>
+      <div class="container mx-auto px-4 max-w-4xl text-center flex flex-col items-center">
+        <div class="text-center mb-12 w-full">
+          <h2 class="text-3xl font-bold text-[#FF7F00] mb-4 text-center">What is Condition Monitoring?</h2>
           <div class="w-20 h-1 bg-[#FF7F00] mx-auto rounded"></div>
         </div>
         
@@ -61,16 +65,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <section class="py-16 border-t border-neutral-800 text-center">
       <div class="container mx-auto px-4 max-w-6xl text-center">
         <div class="text-center mb-16">
-          <h2 class="text-3xl font-bold text-[#FF7F00] mb-4">Our Condition Monitoring Solutions</h2>
+          <h2 class="text-3xl font-bold text-[#FF7F00] mb-4 text-center">Our Condition Monitoring Solutions</h2>
           <p class="text-gray-300 max-w-2xl mx-auto text-center">
             We combine advanced Non-Destructive Testing (NDT) technologies with deep engineering expertise to safeguard critical plant assets.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center justify-items-center">
           
           <!-- Card 1 -->
-          <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center">
+          <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center flex flex-col items-center w-full">
             <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4 mx-auto">
               01
             </div>
@@ -81,7 +85,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
 
           <!-- Card 2 -->
-          <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center">
+          <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center flex flex-col items-center w-full">
             <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4 mx-auto">
               02
             </div>
@@ -92,7 +96,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
 
           <!-- Card 3 -->
-          <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center">
+          <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center flex flex-col items-center w-full">
             <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4 mx-auto">
               03
             </div>
@@ -103,7 +107,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
 
           <!-- Card 4 -->
-          <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center">
+          <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center flex flex-col items-center w-full">
             <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4 mx-auto">
               04
             </div>
@@ -114,7 +118,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
 
           <!-- Card 5 -->
-          <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center">
+          <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center flex flex-col items-center w-full">
             <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4 mx-auto">
               05
             </div>
@@ -125,7 +129,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
 
           <!-- Card 6 -->
-          <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center">
+          <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all text-center flex flex-col items-center w-full">
             <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex items-center justify-center font-bold text-xl mb-4 mx-auto">
               06
             </div>
@@ -136,12 +140,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
 
           <!-- Card 7 -->
-          <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all lg:col-span-3 text-center">
-            <div class="flex flex-col items-center gap-4 text-center">
+          <div class="bg-[#2a2a2a] p-6 rounded-xl shadow-sm border border-neutral-800 hover:border-[#FF7F00]/50 transition-all lg:col-span-3 text-center flex flex-col items-center w-full">
+            <div class="flex flex-col items-center gap-4 text-center w-full">
               <div class="w-12 h-12 bg-[#FF7F00]/20 text-[#FF7F00] rounded-lg flex-shrink-0 flex items-center justify-center font-bold text-xl mx-auto">
                 07
               </div>
-              <div class="text-center">
+              <div class="text-center w-full">
                 <h3 class="text-xl font-bold text-white mb-2 text-center">Root Cause Failure Analysis (RCFA)</h3>
                 <p class="text-gray-300 text-sm leading-relaxed max-w-3xl mx-auto text-center">
                   When a component fails, repairing it without identifying the underlying cause invites repeat failures. Our forensic engineering team conducts thorough Root Cause Failure Analysis—evaluating fractography, operational history, lubrication quality, and alignment logs to implement permanent corrective measures.
@@ -156,16 +160,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
     <!-- Bottom CTA Section -->
     <section id="contact" class="py-16 text-center border-t border-neutral-800">
-      <div class="container mx-auto px-4 max-w-4xl text-center">
-        <!-- Moved down by 40px -->
+      <div class="container mx-auto px-4 max-w-4xl text-center flex flex-col items-center">
+        <!-- Headline moved down 40px (mt-[40px]) -->
         <h2 class="text-3xl font-bold text-[#FF7F00] mb-4 mt-[40px] text-center">
           Ready to Eliminate Unplanned Downtime?
         </h2>
         <p class="text-gray-300 text-lg mb-8 text-center mx-auto">
           Partner with our reliability specialists to implement a condition monitoring schedule customized to your plant's operational demands.
         </p>
-        <!-- Button moved down by 40px -->
-        <a href="/contact" class="bg-[#FF7F00] text-[#222222] hover:bg-[#e06f00] font-semibold px-8 py-3 rounded-md transition-colors inline-block mt-[40px]">
+        <!-- Button moved down 40px (mt-[40px]) -->
+        <a href="/contact" class="bg-[#FF7F00] text-[#222222] hover:bg-[#e06f00] font-semibold px-8 py-3 rounded-md transition-colors inline-block mt-[40px] mx-auto">
           Get in Touch With Us
         </a>
       </div>
