@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar.astro';
 
 interface Props {
   title?: string;
+  description?: string; // <--- Add this line (the '?' makes it optional)
 }
 
 const { title = "UNCUT ELECTRO-MECHANICAL ENGINEERING" } = Astro.props;
