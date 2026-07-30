@@ -104,6 +104,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
+  /* Global smooth scrolling for jump links */
+  html {
+    scroll-behavior: smooth;
+  }
+
   .industries-page {
     padding-top: 60px;   /* Content starts 60px below Header */
     padding-left: 30px;  /* 30px away from the left border */
@@ -165,7 +170,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     border-left: 4px solid #FF7F00;
     padding: 28px;
     border-radius: 0 6px 6px 0;
-    scroll-margin-top: 110px; /* Offset to prevent header overlap when clicking anchor links */
+    /* Increased offset to clear the sticky header completely */
+    scroll-margin-top: 150px; 
   }
 
   .industry-card h2 {

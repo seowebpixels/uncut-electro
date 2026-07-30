@@ -43,7 +43,9 @@
           </ul>
         </li>
 
-        <li><a href="/#industries-served">Industries</a></li>
+        <!-- Wired Industries Link -->
+        <li><a href="/industries">Industries</a></li>
+
         <li><a href="/#advantages">About Us</a></li>
         <li><a href="/#faq">FAQ</a></li>
       </ul>
@@ -60,7 +62,6 @@
 </header>
 
 <script>
-  // Mobile Menu Toggle Script
   const mobileToggle = document.getElementById('mobile-toggle');
   const mainNav = document.getElementById('main-nav');
 
@@ -94,7 +95,7 @@
     min-height: 100px;
   }
 
-  /* User Logo Specs */
+  /* Logo Specs */
   .site-logo {
     width: 220px;
     height: 380px;
@@ -109,7 +110,7 @@
     text-decoration: none;
   }
 
-  /* Navigation Links (Desktop) */
+  /* Navigation Links */
   .nav-links {
     list-style: none;
     display: flex;
@@ -170,7 +171,6 @@
     transition: all 0.25s ease;
   }
 
-  /* Reveal Dropdown on Hover */
   .dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
@@ -189,7 +189,6 @@
     margin-bottom: 0;
   }
 
-  /* Individual Sub Menu Box Items */
   .dropdown-menu li a {
     display: block;
     padding: 8px 12px;
@@ -227,7 +226,7 @@
     transform: translateY(-1px);
   }
 
-  /* Mobile Toggle Button (Hidden on Desktop) */
+  /* Mobile Toggle Button */
   .mobile-toggle {
     display: none;
     background: transparent;
@@ -243,9 +242,6 @@
     display: block;
   }
 
-  /* ===================================================
-     MOBILE RESPONSIVE STYLES (Screen widths <= 900px)
-     =================================================== */
   @media (max-width: 900px) {
     .mobile-toggle {
       display: flex;
@@ -253,7 +249,6 @@
       justify-content: center;
     }
 
-    /* Hide Desktop Nav Drawer initially */
     .main-nav {
       position: absolute;
       top: 100%;
@@ -266,7 +261,6 @@
       box-shadow: 0 15px 30px rgba(0,0,0,0.8);
     }
 
-    /* Open State */
     .main-nav.is-open {
       display: block;
     }
@@ -282,7 +276,6 @@
       width: 100%;
     }
 
-    /* Mobile Dropdown Styling */
     .dropdown-menu {
       position: static;
       opacity: 1;
@@ -294,7 +287,7 @@
     }
 
     .nav-cta {
-      display: none; /* Keeps mobile header clean; CTA can sit in mobile drawer if desired */
+      display: none;
     }
   }
 </style>
