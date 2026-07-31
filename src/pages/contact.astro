@@ -94,12 +94,19 @@ import Footer from '../components/Footer.astro';
           </div>
 
           <!-- Column 2: Quote & Service Inquiry Form -->
-          <div class="form-card">
-            <h2>Request a Quote / Send Inquiry</h2>
-            <p class="form-lead">Fill out the details below and an engineer will get back to you within 24 hours.</p>
+          <div class="form-card" id="formCardContainer">
+            <h2 id="formHeading">Request a Quote / Send Inquiry</h2>
+            <p id="formSubheading" class="form-lead">Fill out the details below and an engineer will get back to you within 24 hours.</p>
 
-            <form class="rfq-form" action="#" method="POST">
+            <form class="rfq-form" id="contactForm" enctype="multipart/form-data">
               
+              <!-- WEB3FORMS HIDDEN CONFIGURATION -->
+              <input type="hidden" name="access_key" value="d868911a-fb06-453b-a591-734d461a57cb" />
+              <input type="hidden" name="subject" value="⚡ New Website RFQ / Inquiry - Uncut Electro Mechanical" />
+              <input type="hidden" name="from_name" value="Uncut Website Notification" />
+              <!-- Honeypot Spam Protection (Hidden from human visitors) -->
+              <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
               <!-- Contact Details -->
               <div class="form-row">
                 <div class="form-field">
@@ -131,23 +138,23 @@ import Footer from '../components/Footer.astro';
                   <label for="service">Service Required <span class="required">*</span></label>
                   <select id="service" name="service" required>
                     <option value="" disabled selected>Select a Service...</option>
-                    <option value="photovoltaic-systems">Design & Installation of Photovoltaic (Solar) Systems</option>
-                    <option value="motor-rewinding">AC-DC Motor Rewinding</option>
-                    <option value="condition-monitoring">Condition Monitoring</option>
-                    <option value="diesel-generators">Diesel Generators</option>
-                    <option value="substations">Substations</option>
-                    <option value="switchgears">Switchgears</option>
-                    <option value="transformers">Transformers</option>
-                    <option value="general-inquiry">General Technical Inquiry</option>
+                    <option value="Photovoltaic (Solar) Systems">Design & Installation of Photovoltaic (Solar) Systems</option>
+                    <option value="AC-DC Motor Rewinding">AC-DC Motor Rewinding</option>
+                    <option value="Condition Monitoring">Condition Monitoring</option>
+                    <option value="Diesel Generators">Diesel Generators</option>
+                    <option value="Substations">Substations</option>
+                    <option value="Switchgears">Switchgears</option>
+                    <option value="Transformers">Transformers</option>
+                    <option value="General Technical Inquiry">General Technical Inquiry</option>
                   </select>
                 </div>
 
                 <div class="form-field">
                   <label for="urgency">Urgency Level <span class="required">*</span></label>
                   <select id="urgency" name="urgency" required>
-                    <option value="standard" selected>⏱️ Standard RFQ / Tender (24hr Response)</option>
-                    <option value="emergency">🚨 Emergency Breakdown (Immediate Dispatch)</option>
-                    <option value="planned">📅 Planned Maintenance / Future Project</option>
+                    <option value="Standard RFQ (24hr)" selected>⏱️ Standard RFQ / Tender (24hr Response)</option>
+                    <option value="Emergency Breakdown">🚨 Emergency Breakdown (Immediate Dispatch)</option>
+                    <option value="Planned Maintenance">📅 Planned Maintenance / Future Project</option>
                   </select>
                 </div>
               </div>
@@ -171,11 +178,41 @@ import Footer from '../components/Footer.astro';
                 <span class="file-hint">Accepted formats: PDF, DOCX, JPG, PNG (Max 10MB)</span>
               </div>
 
-              <button type="submit" class="btn-submit">
-                Submit Request →
+              <button type="submit" id="submitBtn" class="btn-submit">
+                <span id="btnText">Submit Request →</span>
               </button>
 
+              <div id="formStatus" class="form-error-msg" style="display: none;"></div>
+
             </form>
+
+            <!-- Custom Success Display Card (Revealed via JS) -->
+            <div id="successMessage" class="success-card" style="display: none;">
+              <div class="success-icon">⚡</div>
+              <h2>Inquiry Logged Successfully!</h2>
+              <p class="success-lead">
+                Thank you for reaching out to <strong>Uncut Electro Mechanical Engineering</strong>. Your technical request has been routed directly to our engineering desk.
+              </p>
+
+              <div class="success-details">
+                <div class="success-step">
+                  <span class="step-num">1</span>
+                  <p>An engineer is reviewing your equipment specifications and scope.</p>
+                </div>
+                <div class="success-step">
+                  <span class="step-num">2</span>
+                  <p>We will contact you with a formal quote or assessment within <strong>24 business hours</strong>.</p>
+                </div>
+              </div>
+
+              <div class="success-urgent">
+                <p>Urgent breakdown or critical power fault? Contact emergency dispatch directly:</p>
+                <a href="tel:0795059510" class="success-call-btn">📞 Call Emergency Line: 079 505 9510</a>
+              </div>
+
+              <button type="button" id="resetFormBtn" class="btn-reset">← Send Another Inquiry</button>
+            </div>
+
           </div>
 
         </div>
@@ -186,6 +223,67 @@ import Footer from '../components/Footer.astro';
 
   <!-- Site Footer -->
   <Footer />
+
+  <!-- AJAX Form Processing Script -->
+  <script is:inline>
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    const formStatus = document.getElementById('formStatus');
+    const successMessage = document.getElementById('successMessage');
+    const formHeading = document.getElementById('formHeading');
+    const formSubheading = document.getElementById('formSubheading');
+    const resetFormBtn = document.getElementById('resetFormBtn');
+
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // UI Loading state
+        submitBtn.disabled = true;
+        btnText.textContent = 'Transmitting Request...';
+        formStatus.style.display = 'none';
+
+        const formData = new FormData(form);
+
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        })
+        .then(async (response) => {
+          let json = await response.json();
+          if (response.status === 200) {
+            // Hide form and headers, display custom success card
+            form.style.display = 'none';
+            if (formHeading) formHeading.style.display = 'none';
+            if (formSubheading) formSubheading.style.display = 'none';
+            successMessage.style.display = 'block';
+            form.reset();
+          } else {
+            formStatus.style.display = 'block';
+            formStatus.textContent = json.message || 'Submission failed. Please check details or call us directly.';
+          }
+        })
+        .catch(error => {
+          console.error(error);
+          formStatus.style.display = 'block';
+          formStatus.textContent = 'Network connectivity issue. Please try again or call 079 505 9510 directly.';
+        })
+        .then(function() {
+          submitBtn.disabled = false;
+          btnText.textContent = 'Submit Request →';
+        });
+      });
+
+      // Allow sending another inquiry
+      resetFormBtn.addEventListener('click', function() {
+        successMessage.style.display = 'none';
+        form.style.display = 'flex';
+        if (formHeading) formHeading.style.display = 'block';
+        if (formSubheading) formSubheading.style.display = 'block';
+      });
+    }
+  </script>
 
 </body>
 </html>
@@ -307,7 +405,7 @@ import Footer from '../components/Footer.astro';
   /* 2-Column Layout Grid */
   .contact-grid {
     display: grid;
-    grid-template-columns: 5fr 7fr; /* Expanded left column for breathing room */
+    grid-template-columns: 5fr 7fr;
     gap: 32px;
     align-items: start;
   }
@@ -372,8 +470,8 @@ import Footer from '../components/Footer.astro';
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
-    white-space: nowrap; /* Prevents number from wrapping */
-    flex-shrink: 0;      /* Prevents flexbox from squeezing the number */
+    white-space: nowrap;
+    flex-shrink: 0;
     transition: color 0.2s ease;
   }
 
@@ -518,6 +616,128 @@ import Footer from '../components/Footer.astro';
   .btn-submit:hover {
     background-color: #E67200;
     transform: translateY(-2px);
+  }
+
+  .btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  /* Form Error Banner */
+  .form-error-msg {
+    background-color: #3b1414;
+    border: 1px solid #ff4d4d;
+    color: #ff9999;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+
+  /* Custom Success Display State */
+  .success-card {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .success-icon {
+    font-size: 3.5rem;
+    margin-bottom: 12px;
+  }
+
+  .success-card h2 {
+    color: #FFFFFF;
+    font-size: 1.75rem;
+    margin-bottom: 12px;
+  }
+
+  .success-lead {
+    color: #CCCCCC;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+
+  .success-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    background-color: #242424;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #FF7F00;
+    text-align: left;
+    margin-bottom: 28px;
+  }
+
+  .success-step {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .step-num {
+    background-color: #FF7F00;
+    color: #000000;
+    font-weight: 800;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.9rem;
+  }
+
+  .success-step p {
+    margin: 0;
+    color: #DDDDDD;
+    font-size: 0.92rem;
+    line-height: 1.4;
+  }
+
+  .success-urgent {
+    background-color: #1e1e1e;
+    border: 1px dashed #444444;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+  }
+
+  .success-urgent p {
+    margin: 0 0 8px 0;
+    color: #AAAAAA;
+    font-size: 0.88rem;
+  }
+
+  .success-call-btn {
+    color: #FF7F00;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: color 0.2s ease;
+  }
+
+  .success-call-btn:hover {
+    color: #FFFFFF;
+  }
+
+  .btn-reset {
+    background: transparent;
+    border: 1px solid #444444;
+    color: #888888;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+  }
+
+  .btn-reset:hover {
+    color: #FFFFFF;
+    border-color: #666666;
   }
 
   /* Responsive Design */
