@@ -1,0 +1,563 @@
+---
+/* src/pages/contact.astro */
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact & Request a Quote | Uncut Electro Mechanical Engineering</title>
+  <meta name="description" content="Get in touch with Uncut Electro Mechanical Engineering for workshop overhauls, 24/7 emergency site dispatch, or commercial solar and high-voltage quotes." />
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <Navbar />
+
+  <main class="page-container">
+    
+    <!-- Hero Header -->
+    <header class="page-hero">
+      <div class="hero-content">
+        <span class="badge">GET IN TOUCH</span>
+        <h1>Contact & Service Inquiries</h1>
+        <p class="hero-subtitle">
+          Partner with our electro-mechanical engineering specialists for rapid workshop repairs, field diagnostics, or turnkey solar and substation quotes. Reach out directly or complete our RFQ form below.
+        </p>
+      </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <section class="contact-section">
+      <div class="contact-container">
+        
+        <!-- Emergency Callout Banner -->
+        <div class="emergency-banner">
+          <div class="emergency-icon">🚨</div>
+          <div class="emergency-text">
+            <h3>24/7 Emergency Breakdown Response</h3>
+            <p>For immediate on-site fault finding or critical plant breakdown support, call our emergency hotline directly.</p>
+          </div>
+          <a href="tel:0795059510" class="btn-emergency-call">Call Hotline: 079 505 9510</a>
+        </div>
+
+        <!-- 2-Column Grid: Contact Info + Inquiry Form -->
+        <div class="contact-grid">
+          
+          <!-- Column 1: Direct Contact Details -->
+          <div class="contact-info-card">
+            <h2>Contact Information</h2>
+            <p class="info-lead">Connect with our management and engineering team directly for technical assistance or workshop scheduling.</p>
+
+            <div class="info-group">
+              <h3>Key Contacts</h3>
+              
+              <div class="contact-person">
+                <span class="person-name">Siphokazi Ngubo</span>
+                <a href="tel:0723437425" class="contact-link">📞 072 343 7425</a>
+              </div>
+
+              <div class="contact-person">
+                <span class="person-name">Zeph Shezi</span>
+                <a href="tel:0795059510" class="contact-link">📞 079 505 9510</a>
+              </div>
+            </div>
+
+            <div class="info-group">
+              <h3>Email & Correspondence</h3>
+              <a href="mailto:service@uncutelecmech.co.za" class="contact-link email-link">
+                ✉️ service@uncutelecmech.co.za
+              </a>
+            </div>
+
+            <div class="info-group">
+              <h3>Facility & Workshop Address</h3>
+              <address class="address-box">
+                📍 <strong>Uncut Electro Mechanical Engineering</strong><br />
+                30 Van Eck Street<br />
+                Chamdor<br />
+                Krugersdorp<br />
+                1754
+              </address>
+            </div>
+
+            <div class="info-group">
+              <h3>Operating Hours</h3>
+              <p class="hours-text">
+                <strong>Workshop & Office:</strong> Monday – Friday: 07:30 – 16:30<br />
+                <strong>Emergency Response Crews:</strong> 24 Hours / 7 Days a Week
+              </p>
+            </div>
+          </div>
+
+          <!-- Column 2: Quote & Service Inquiry Form -->
+          <div class="form-card">
+            <h2>Request a Quote / Send Inquiry</h2>
+            <p class="form-lead">Fill out the details below and an engineer will get back to you within 24 hours.</p>
+
+            <form class="rfq-form" action="#" method="POST">
+              
+              <!-- Contact Details -->
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="fullName">Full Name <span class="required">*</span></label>
+                  <input type="text" id="fullName" name="fullName" placeholder="e.g. John Doe" required />
+                </div>
+                
+                <div class="form-field">
+                  <label for="company">Company / Mine / Plant Name <span class="required">*</span></label>
+                  <input type="text" id="company" name="company" placeholder="e.g. Mining Corp" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="email">Email Address <span class="required">*</span></label>
+                  <input type="email" id="email" name="email" placeholder="name@company.co.za" required />
+                </div>
+
+                <div class="form-field">
+                  <label for="phone">Phone Number <span class="required">*</span></label>
+                  <input type="tel" id="phone" name="phone" placeholder="082 123 4567" required />
+                </div>
+              </div>
+
+              <!-- Service & Urgency -->
+              <div class="form-row">
+                <div class="form-field">
+                  <label for="service">Service Required <span class="required">*</span></label>
+                  <select id="service" name="service" required>
+                    <option value="" disabled selected>Select a Service...</option>
+                    <option value="photovoltaic-systems">Design & Installation of Photovoltaic (Solar) Systems</option>
+                    <option value="motor-rewinding">AC-DC Motor Rewinding</option>
+                    <option value="condition-monitoring">Condition Monitoring</option>
+                    <option value="diesel-generators">Diesel Generators</option>
+                    <option value="substations">Substations</option>
+                    <option value="switchgears">Switchgears</option>
+                    <option value="transformers">Transformers</option>
+                    <option value="general-inquiry">General Technical Inquiry</option>
+                  </select>
+                </div>
+
+                <div class="form-field">
+                  <label for="urgency">Urgency Level <span class="required">*</span></label>
+                  <select id="urgency" name="urgency" required>
+                    <option value="standard" selected>⏱️ Standard RFQ / Tender (24hr Response)</option>
+                    <option value="emergency">🚨 Emergency Breakdown (Immediate Dispatch)</option>
+                    <option value="planned">📅 Planned Maintenance / Future Project</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Scope / Details -->
+              <div class="form-field full-width">
+                <label for="details">Project Details / Scope of Work <span class="required">*</span></label>
+                <textarea 
+                  id="details" 
+                  name="details" 
+                  rows="5" 
+                  placeholder="Please specify equipment specifications (kW/kVA, voltage), fault symptoms, or site location..."
+                  required
+                ></textarea>
+              </div>
+
+              <!-- Optional File Upload -->
+              <div class="form-field full-width">
+                <label for="attachment">Attach Specs / RFQ Document (Optional)</label>
+                <input type="file" id="attachment" name="attachment" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg" class="file-input" />
+                <span class="file-hint">Accepted formats: PDF, DOCX, JPG, PNG (Max 10MB)</span>
+              </div>
+
+              <button type="submit" class="btn-submit">
+                Submit Request →
+              </button>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <Footer />
+
+</body>
+</html>
+
+<style>
+  /* Base Setup */
+  body {
+    background-color: #121212;
+    color: #FFFFFF;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .page-container {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Page Hero Header */
+  .page-hero {
+    background-color: #1a1a1a;
+    padding: 60px 24px 40px 24px;
+    border-bottom: 1px solid #333333;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  .badge {
+    color: #FF7F00;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .page-hero h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin: 0 0 16px 0;
+    color: #FFFFFF;
+  }
+
+  .hero-subtitle {
+    color: #CCCCCC;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Contact Section */
+  .contact-section {
+    padding: 50px 24px 80px 24px;
+  }
+
+  .contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* 24/7 Emergency Banner */
+  .emergency-banner {
+    background-color: #1e1e1e;
+    border: 2px solid #FF7F00;
+    border-radius: 8px;
+    padding: 24px 32px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    box-shadow: 0 4px 20px rgba(255, 127, 0, 0.15);
+  }
+
+  .emergency-icon {
+    font-size: 2.2rem;
+  }
+
+  .emergency-text {
+    flex-grow: 1;
+  }
+
+  .emergency-text h3 {
+    margin: 0 0 4px 0;
+    color: #FFFFFF;
+    font-size: 1.25rem;
+  }
+
+  .emergency-text p {
+    margin: 0;
+    color: #CCCCCC;
+    font-size: 0.95rem;
+  }
+
+  .btn-emergency-call {
+    background-color: #FF7F00;
+    color: #000000;
+    font-weight: 800;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .btn-emergency-call:hover {
+    background-color: #E67200;
+    transform: translateY(-2px);
+  }
+
+  /* 2-Column Layout Grid */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 4.5fr 7.5fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  /* Left Column: Info Card */
+  .contact-info-card {
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    padding: 32px;
+  }
+
+  .contact-info-card h2 {
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    margin: 0 0 8px 0;
+  }
+
+  .info-lead {
+    color: #A3A3A3;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    margin-bottom: 28px;
+  }
+
+  .info-group {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #2a2a2a;
+  }
+
+  .info-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .info-group h3 {
+    font-size: 0.9rem;
+    color: #FF7F00;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 12px 0;
+  }
+
+  .contact-person {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .person-name {
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .contact-link {
+    color: #CCCCCC;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+  }
+
+  .contact-link:hover {
+    color: #FF7F00;
+  }
+
+  .email-link {
+    display: inline-block;
+    word-break: break-all;
+  }
+
+  .address-box {
+    font-style: normal;
+    color: #CCCCCC;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+
+  .hours-text {
+    color: #CCCCCC;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Right Column: Form Card */
+  .form-card {
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    padding: 32px;
+  }
+
+  .form-card h2 {
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    margin: 0 0 8px 0;
+  }
+
+  .form-lead {
+    color: #A3A3A3;
+    font-size: 0.92rem;
+    margin-bottom: 24px;
+  }
+
+  .rfq-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-field.full-width {
+    grid-column: 1 / -1;
+  }
+
+  label {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #DDDDDD;
+  }
+
+  .required {
+    color: #FF7F00;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    background-color: #242424;
+    border: 1px solid #3d3d3d;
+    border-radius: 6px;
+    padding: 12px 14px;
+    color: #FFFFFF;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #FF7F00;
+    box-shadow: 0 0 8px rgba(255, 127, 0, 0.3);
+  }
+
+  select {
+    cursor: pointer;
+    color: #FFFFFF;
+  }
+
+  select option {
+    background-color: #1a1a1a;
+    color: #FFFFFF;
+  }
+
+  .file-input {
+    background-color: #242424;
+    padding: 10px;
+    border: 1px dashed #444444;
+    border-radius: 6px;
+    color: #CCCCCC;
+    font-size: 0.85rem;
+  }
+
+  .file-hint {
+    color: #888888;
+    font-size: 0.78rem;
+  }
+
+  .btn-submit {
+    background-color: #FF7F00;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: 800;
+    padding: 15px 28px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    margin-top: 8px;
+  }
+
+  .btn-submit:hover {
+    background-color: #E67200;
+    transform: translateY(-2px);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .emergency-banner {
+      flex-direction: column;
+      text-align: center;
+      gap: 16px;
+    }
+
+    .btn-emergency-call {
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-info-card,
+    .form-card {
+      padding: 20px;
+    }
+
+    .contact-person {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+
+    .page-hero h1 {
+      font-size: 1.75rem;
+    }
+
+    .btn-submit {
+      width: 100%;
+    }
+  }
+</style>
