@@ -1,0 +1,479 @@
+---
+// src/pages/about.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="About Us | Uncut Electro-Mechanical Engineering" 
+  description="100% Black Woman-Owned electro-mechanical engineering firm delivering ISO 9001 aligned maintenance, condition monitoring, and skill transfer across Africa."
+>
+  <div class="about-page">
+    
+    <!-- Hero Header -->
+    <header class="page-header">
+      <span class="badge">100% Black Woman Owned</span>
+      <h1>About Uncut Electro-Mechanical Engineering</h1>
+      <p class="intro-text">
+        Founded in August 2016, Uncut Electro-Mechanical Engineering (Pty) Ltd delivers top-tier engineering, condition monitoring, repair, and maintenance services to public and private sectors across the African continent. We combine technical excellence with a deep commitment to Broad-Based Black Economic Empowerment (B-BBEE) and local skill transfer.
+      </p>
+    </header>
+
+    <!-- Executive Leadership Section -->
+    <section class="about-section">
+      <h2 class="section-title">Executive Leadership & Technical Expertise</h2>
+      <div class="grid-2">
+        
+        <!-- Leadership Card: Miss Siphokazi Ngubo -->
+        <div class="info-card leader-card">
+          <div class="leader-flex">
+            <div class="leader-img-wrapper">
+              <img 
+                src="/placeholder-1.jpg" 
+                alt="Miss Siphokazi Ngubo - Managing Director" 
+                class="leader-img"
+              />
+            </div>
+            <div class="leader-content">
+              <div class="card-header">
+                <h3>Miss Siphokazi Ngubo</h3>
+                <span class="role">Founder & Managing Director</span>
+              </div>
+              <p>
+                Siphokazi founded Uncut Electro-Mechanical Engineering in August 2016 on the principles of empowerment and technical excellence. Holding a degree in Strategic Logistics Management and a diploma in Business Management, she brings extensive strategic leadership experience from both the public and private sectors to drive operational growth.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Lead Card: Sikhosiphi Shezi -->
+        <div class="info-card leader-card">
+          <div class="card-header">
+            <h3>Sikhosiphi Shezi</h3>
+            <span class="role">Technical Operations Lead</span>
+          </div>
+          <p class="card-intro">
+            Joined in June 2026, bringing multi-disciplinary master technical certifications across electrical and mechanical domains, with experience spanning both public and private industrial sectors.
+          </p>
+          
+          <h4 class="cert-heading">Qualifications & Certifications:</h4>
+          <ul class="cert-list">
+            <li>Trade Test in Electromechanical Engineering</li>
+            <li>Diploma in Operations Management</li>
+            <li>Competency Certificate in ORHVS</li>
+            <li>Competency Asset Reliability Practitioner (ARP)</li>
+            <li>Mobius Vibration Analysis Certification</li>
+            <li>Infrared Thermography Certification</li>
+            <li>Electrical Motor Diagnostics Certification</li>
+            <li>Oil & Failure Analysis Certifications</li>
+            <li>Shaft Alignment Certification</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- B-BBEE & Transformation Section -->
+    <section class="about-section highlight-box">
+      <h2 class="section-title">B-BBEE & Transformation Commitment</h2>
+      <p class="section-intro">
+        Through our BEE policy, we are dedicated to empowering historically disadvantaged South Africans with vital engineering knowledge and technical skills to secure the means of production for future generations.
+      </p>
+
+      <div class="grid-3">
+        <div class="pillar-card">
+          <h4>Technical Mentorship</h4>
+          <p>Nurturing black professionals into core technical management roles within motor rewinding, switchgear, and asset reliability.</p>
+        </div>
+        <div class="pillar-card">
+          <h4>Youth Development</h4>
+          <p>Providing specialized technical training for young black female and male South Africans to foster sustainable industry capabilities.</p>
+        </div>
+        <div class="pillar-card">
+          <h4>Skills Funding</h4>
+          <p>Direct internal funding for in-house skills development and continuous human capital enrichment.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quality Standards & Technical Testing -->
+    <section class="about-section">
+      <h2 class="section-title">Quality Assurance & Technical Rigor</h2>
+      <div class="grid-2-tech">
+        
+        <div class="info-card">
+          <h3>ISO 9001:2015 Alignment</h3>
+          <p>
+            We operate in strict alignment with ISO 9001:2015 Quality Management System requirements. Our processes ensure consistent delivery of products and services that comply with statutory requirements while constantly measuring customer satisfaction and continuous process improvement.
+          </p>
+          
+          <h3 class="sub-heading">Workmanship & Guarantees</h3>
+          <ul class="guarantee-list">
+            <li><strong>12-Month Warranty:</strong> All workmanship carries a full 12-month warranty from date of installation (subject to OEM operational compliance).</li>
+            <li><strong>Honest Pricing Policy:</strong> If machine repair costs exceed 70% of a new machine's value, we transparently advise replacement over uneconomical repair.</li>
+            <li><strong>Rapid Response:</strong> 1–3 hour callout response times and 1–5 day turnaround for emergency breakdown works.</li>
+          </ul>
+        </div>
+
+        <!-- Technical Testing Image Card -->
+        <div class="tech-image-card">
+          <div class="img-frame">
+            <img 
+              src="/transformer-insulation-resistance-test.avif" 
+              alt="Transformer Insulation Resistance Testing Equipment" 
+              class="tech-img"
+            />
+          </div>
+          <div class="img-caption">
+            <span class="caption-tag">Field Operations</span>
+            <p>On-site insulation resistance testing and diagnostic condition monitoring performed on heavy asset transformers.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Client Training & CSR Section -->
+    <section class="about-section">
+      <h2 class="section-title">Skills Transfer & Community Impact</h2>
+      <div class="grid-2">
+        
+        <div class="info-card">
+          <h3>On-Site Client Training</h3>
+          <p>
+            To address the national technical skills shortage, we provide hands-on practical skills transfer to our clients' internal teams during site interventions.
+          </p>
+          <ul class="check-list">
+            <li>Generator controller programming</li>
+            <li>Machinery lubrication & oil/coolant management</li>
+            <li>Gland packing adjustment & replacement</li>
+            <li>Battery maintenance & machine alignment</li>
+          </ul>
+        </div>
+
+        <div class="info-card">
+          <h3>Corporate Social Responsibility (CSR)</h3>
+          <p>
+            Our CSR program actively identifies, utilizes, and rewards local talent. We offer young South Africans opportunities to gain practical, technical experience on live infrastructure projects—giving our communities real tools and hope for a brighter technical future.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
+
+<style>
+  .about-page {
+    padding-top: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Page Header */
+  .page-header {
+    margin-bottom: 48px;
+  }
+
+  .badge {
+    display: inline-block;
+    background-color: rgba(255, 127, 0, 0.15);
+    color: #FF7F00;
+    border: 1px solid #FF7F00;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    color: #FF7F00;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 16px;
+  }
+
+  .intro-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #E0E0E0;
+    max-width: 950px;
+  }
+
+  /* Section Styles */
+  .about-section {
+    margin-bottom: 56px;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+    border-left: 4px solid #FF7F00;
+    padding-left: 12px;
+  }
+
+  .section-intro {
+    font-size: 1.05rem;
+    color: #CCCCCC;
+    max-width: 900px;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  /* Layout Grids */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 24px;
+  }
+
+  .grid-2-tech {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  @media (max-width: 900px) {
+    .grid-2-tech {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .grid-2 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Info Cards */
+  .info-card {
+    background-color: #1A1A1A;
+    border: 1px solid #333333;
+    padding: 28px;
+    border-radius: 6px;
+    height: 100%;
+  }
+
+  .info-card h3 {
+    color: #FF7F00;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+
+  .info-card .sub-heading {
+    margin-top: 28px;
+  }
+
+  .info-card p {
+    color: #CCCCCC;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Leader Profile Flex Layout */
+  .leader-flex {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .leader-img-wrapper {
+    flex-shrink: 0;
+    width: 130px;
+  }
+
+  .leader-img {
+    width: 100%;
+    height: 165px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 2px solid #FF7F00;
+  }
+
+  .leader-content {
+    flex-grow: 1;
+  }
+
+  .leader-card .card-header {
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+  }
+
+  .leader-card h3 {
+    color: #FFFFFF;
+    margin-bottom: 4px;
+  }
+
+  .leader-card .role {
+    color: #FF7F00;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .cert-heading {
+    color: #FFFFFF;
+    font-size: 0.95rem;
+    margin-top: 16px;
+    margin-bottom: 10px;
+  }
+
+  .cert-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 8px;
+  }
+
+  .cert-list li {
+    font-size: 0.85rem;
+    color: #D1D5DB;
+    position: relative;
+    padding-left: 14px;
+  }
+
+  .cert-list li::before {
+    content: "•";
+    color: #FF7F00;
+    position: absolute;
+    left: 0;
+  }
+
+  @media (max-width: 500px) {
+    .leader-flex {
+      flex-direction: column;
+    }
+    .leader-img-wrapper {
+      width: 100%;
+    }
+    .leader-img {
+      height: 220px;
+    }
+  }
+
+  /* Highlight Box (BEE) */
+  .highlight-box {
+    background-color: #141414;
+    border: 1px solid #FF7F00;
+    padding: 32px;
+    border-radius: 6px;
+  }
+
+  .pillar-card {
+    background-color: #1A1A1A;
+    padding: 20px;
+    border-radius: 4px;
+    border-left: 3px solid #FF7F00;
+  }
+
+  .pillar-card h4 {
+    color: #FFFFFF;
+    margin-bottom: 8px;
+    font-size: 1.05rem;
+  }
+
+  .pillar-card p {
+    color: #AAAAAA;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Technical Image Card */
+  .tech-image-card {
+    background-color: #1A1A1A;
+    border: 1px solid #333333;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .img-frame {
+    width: 100%;
+    max-height: 320px;
+    overflow: hidden;
+  }
+
+  .tech-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .img-caption {
+    padding: 20px;
+    background-color: #141414;
+    border-top: 1px solid #262626;
+  }
+
+  .caption-tag {
+    display: inline-block;
+    color: #FF7F00;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+
+  .img-caption p {
+    color: #CCCCCC;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* Bullet & Guarantee Lists */
+  .guarantee-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .guarantee-list li {
+    color: #CCCCCC;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+
+  .guarantee-list strong {
+    color: #FF7F00;
+  }
+
+  .check-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 16px;
+  }
+
+  .check-list li {
+    color: #CCCCCC;
+    font-size: 0.95rem;
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+
+  .check-list li::before {
+    content: "✔";
+    color: #FF7F00;
+    position: absolute;
+    left: 0;
+  }
+</style>
