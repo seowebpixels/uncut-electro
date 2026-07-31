@@ -66,6 +66,18 @@
           </div>
         </li>
       </ul>
+
+      <!-- Download Company Profile Button -->
+      <div class="profile-download-wrapper">
+        <a 
+          href="/uncut-company-profile.pdf" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="btn-profile-download"
+        >
+          📄 Download Company Profile (PDF)
+        </a>
+      </div>
     </div>
 
   </div>
@@ -121,10 +133,10 @@
   }
 
   @media (max-width: 768px) {
-  .designer-link {
-    white-space: nowrap; /* Prevents "Web Design Pros" from breaking across lines on mobile */
+    .designer-link {
+      white-space: nowrap; /* Prevents "Web Design Pros" from breaking across lines on mobile */
+    }
   }
-}
 
   /* Column Headings */
   .footer-col h3 {
@@ -208,6 +220,32 @@
 
   .phone-link:hover {
     text-decoration: underline;
+  }
+
+  /* Company Profile Download Button */
+  .profile-download-wrapper {
+    margin-top: 20px;
+  }
+
+  .btn-profile-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background-color: #1a1a1a;
+    border: 1px solid #FF7F00;
+    color: #FF7F00;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  }
+
+  .btn-profile-download:hover {
+    background-color: #FF7F00;
+    color: #000000;
+    transform: translateY(-2px);
   }
 
   /* Footer Bottom Bar */
