@@ -75,7 +75,7 @@
     <div class="footer-bottom-container">
       <p>&copy; 2026 Uncut Electro Mechanical Engineering. All Rights Reserved.</p>
       <p class="footer-credit">
-        Website Designed & Developed by <a href="https://www.webdesignpros.co.za" target="_blank" rel="noopener" class="designer-link">Web Design Pros</a>
+        Website Designed & Developed by - <a href="https://www.webdesignpros.co.za" target="_blank" rel="noopener" class="designer-link">Web Design Pros</a>
       </p>
       <div class="footer-bottom-links">
         <a href="/privacy-policy">Privacy Policy</a>
@@ -119,6 +119,12 @@
       grid-template-columns: 1fr;
     }
   }
+
+  @media (max-width: 768px) {
+  .designer-link {
+    white-space: nowrap; /* Prevents "Web Design Pros" from breaking across lines on mobile */
+  }
+}
 
   /* Column Headings */
   .footer-col h3 {
