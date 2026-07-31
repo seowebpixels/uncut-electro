@@ -178,6 +178,11 @@ import Footer from '../components/Footer.astro';
                 <span class="file-hint">Accepted formats: PDF, DOCX, JPG, PNG (Max 10MB)</span>
               </div>
 
+              <!-- POPIA Consent Notice -->
+              <p class="popia-notice">
+                🔒 By submitting this form, you consent to Uncut Electro Mechanical processing your contact details solely for the purpose of responding to your inquiry in accordance with POPIA.
+              </p>
+
               <button type="submit" id="submitBtn" class="btn-submit">
                 <span id="btnText">Submit Request →</span>
               </button>
@@ -597,6 +602,13 @@ import Footer from '../components/Footer.astro';
   .file-hint {
     color: #888888;
     font-size: 0.78rem;
+  }
+
+  .popia-notice {
+    font-size: 0.78rem;
+    color: #888888;
+    line-height: 1.4;
+    margin: 4px 0 8px 0;
   }
 
   .btn-submit {
