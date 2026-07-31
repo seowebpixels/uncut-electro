@@ -1,0 +1,369 @@
+---
+/* src/pages/photovoltaic-systems.astro */
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro'; // Adjust path if your Footer component lives elsewhere
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Photovoltaic (Solar) Systems Design & Installation | Uncut Engineering</title>
+  <meta name="description" content="Turnkey commercial and industrial photovoltaic (PV) solar system engineering, custom design, high-voltage grid integration, and ongoing maintenance." />
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <Navbar />
+
+  <main class="page-container">
+    
+    <!-- Hero Header -->
+    <header class="page-hero">
+      <div class="hero-content">
+        <span class="badge">RENEWABLE ENERGY SOLUTIONS</span>
+        <h1>Design, Installation & Maintenance of Photovoltaic (Solar) Systems</h1>
+        <p class="hero-subtitle">
+          Turnkey industrial solar integration tailored for heavy commercial facilities, mines, and processing plants. We optimize energy yields, reduce grid reliance, and ensure seamless synchronization with existing substation and switchgear infrastructure.
+        </p>
+      </div>
+    </header>
+
+    <!-- Main Content Grid Section -->
+    <section class="content-section">
+      <div class="section-container">
+        
+        <!-- Featured Image Container with Permanent Orange Border -->
+        <div class="featured-image-wrapper">
+          <img 
+            src="/photovoltaic-systems-design.avif" 
+            alt="Commercial Rooftop Photovoltaic Solar Array Design" 
+            class="featured-solar-img"
+            width="1200"
+            height="800"
+          />
+        </div>
+
+        <!-- Overview & Value Proposition -->
+        <div class="intro-block">
+          <h2>Engineering-Grade Industrial Solar Energy</h2>
+          <p>
+            At Uncut Electro Mechanical Engineering, we treat solar photovoltaic systems not as standalone commercial add-ons, but as core components of your plant’s overall high-voltage power distribution ecosystem. 
+          </p>
+          <p>
+            Whether operating grid-tied to offset heavy peak-demand charges or integrated into hybrid microgrids alongside industrial diesel generators, our systems are designed to deliver reliable power under strict industrial operating conditions.
+          </p>
+        </div>
+
+        <!-- 3-Column Core Offerings: Design, Installation, Maintenance -->
+        <div class="pillars-grid">
+          
+          <!-- Pillar 1: Custom Engineering & Design -->
+          <div class="pillar-card">
+            <div class="pillar-icon">📐</div>
+            <h3>1. Custom System Design</h3>
+            <p class="pillar-lead">Precision load profiling and structural array engineering.</p>
+            <ul class="pillar-list">
+              <li><strong>Load Curve & Maximum Demand Analysis:</strong> Tailoring system capacity directly to your plant's operational duty cycle.</li>
+              <li><strong>Structural & Roof Load Audits:</strong> Full ballast, ballast mount, and structural integrity evaluations prior to layout approval.</li>
+              <li><strong>Grid-Tie & Hybrid Synchronization:</strong> Designing automatic generator changeover and reverse-power protection schemes.</li>
+              <li><strong>Inverter & Array String Matching:</strong> Optimizing string voltage calculations for maximum MPPT efficiency across seasonal thermal ranges.</li>
+            </ul>
+          </div>
+
+          <!-- Pillar 2: Turnkey Industrial Installation -->
+          <div class="pillar-card">
+            <div class="pillar-icon">⚡</div>
+            <h3>2. Turnkey Installation</h3>
+            <p class="pillar-lead">Standards-compliant mechanical & electrical execution.</p>
+            <ul class="pillar-list">
+              <li><strong>Substation & Switchgear Integration:</strong> Direct LV/MV tie-ins with dedicated circuit breaker protection panels.</li>
+              <li><strong>Tier-1 PV Module Mounts:</strong> Heavy-duty, corrosion-resistant racking designed for industrial roof profiles and ground mounts.</li>
+              <li><strong>Cabling & Conduit Management:</strong> UV-resistant DC cabling, underground trenching, and armored cable runs complying with SANS code.</li>
+              <li><strong>Compliance & Certification:</strong> Complete grid-connection documentation, CoC issuance, and protection relay testing.</li>
+            </ul>
+          </div>
+
+          <!-- Pillar 3: Ongoing Maintenance & Optimization -->
+          <div class="pillar-card">
+            <div class="pillar-icon">🛠️</div>
+            <h3>3. Lifetime Maintenance</h3>
+            <p class="pillar-lead">Predictive asset care to guarantee continuous peak output.</p>
+            <ul class="pillar-list">
+              <li><strong>Thermographic Array Audits:</strong> Infrared imaging to detect hot spots, failed bypass diodes, or micro-cracks before output drops.</li>
+              <li><strong>Inverter Health & Cleaning:</strong> Heat sink dust removal, fan servicing, and firmware updates for central inverter banks.</li>
+              <li><strong>String Voltage & Megger Testing:</strong> Insulation resistance testing to verify cable integrity and locate ground faults.</li>
+              <li><strong>Array Washing Protocols:</strong> Scheduled panel cleaning schedules tailored for dusty industrial environments.</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Technical Integration Specs Highlight -->
+        <div class="tech-highlight-box">
+          <div class="highlight-text">
+            <h3>Need Generator & Solar Co-Generation?</h3>
+            <p>
+              We specialize in complex retrofits where solar PV works side-by-side with emergency diesel generators. Our control logic prevents reverse power feeding into generators during low-load/high-solar conditions, protecting your backup units from damage.
+            </p>
+          </div>
+          <div class="highlight-cta">
+            <a href="tel:0795059510" class="btn-primary">Speak to an Engineer</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer (if applicable) -->
+  <Footer />
+
+</body>
+</html>
+
+<style>
+  /* Base Page Layout */
+  body {
+    background-color: #121212;
+    color: #FFFFFF;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .page-container {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Hero Banner */
+  .page-hero {
+    background-color: #1a1a1a;
+    padding: 60px 24px 40px 24px;
+    border-bottom: 1px solid #333333;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .badge {
+    color: #FF7F00;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .page-hero h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin: 0 0 16px 0;
+    color: #FFFFFF;
+  }
+
+  .hero-subtitle {
+    color: #CCCCCC;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Content Section */
+  .content-section {
+    padding: 50px 24px 80px 24px;
+  }
+
+  .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* -------------------------------------------------- */
+  /* FEATURED IMAGE WRAPPER WITH PERMANENT ORANGE BORDER */
+  /* -------------------------------------------------- */
+  .featured-image-wrapper {
+    width: 100%;
+    max-height: 520px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 48px;
+    /* Permanent Orange Border */
+    border: 3px solid #FF7F00;
+    box-shadow: 0 8px 30px rgba(255, 127, 0, 0.25);
+    box-sizing: border-box;
+  }
+
+  .featured-solar-img {
+    width: 100%;
+    height: 100%;
+    max-height: 520px;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Intro Section */
+  .intro-block {
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    text-align: center;
+  }
+
+  .intro-block h2 {
+    font-size: 1.75rem;
+    color: #FF7F00;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+
+  .intro-block p {
+    color: #DDDDDD;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  /* 3-Pillar Cards Grid */
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-bottom: 50px;
+  }
+
+  .pillar-card {
+    background-color: #1e1e1e;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+
+  .pillar-card:hover {
+    transform: translateY(-4px);
+    border-color: #FF7F00;
+  }
+
+  .pillar-icon {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+  }
+
+  .pillar-card h3 {
+    color: #FFFFFF;
+    font-size: 1.35rem;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+  }
+
+  .pillar-lead {
+    color: #FF7F00;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0 0 18px 0;
+    line-height: 1.4;
+  }
+
+  .pillar-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .pillar-list li {
+    color: #CCCCCC;
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .pillar-list strong {
+    color: #FFFFFF;
+  }
+
+  /* Tech Highlight Box */
+  .tech-highlight-box {
+    background-color: #1a1a1a;
+    border: 2px solid #FF7F00;
+    border-radius: 8px;
+    padding: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .highlight-text h3 {
+    color: #FFFFFF;
+    font-size: 1.4rem;
+    margin: 0 0 10px 0;
+  }
+
+  .highlight-text p {
+    color: #CCCCCC;
+    font-size: 0.98rem;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 800px;
+  }
+
+  .btn-primary {
+    background-color: #FF7F00;
+    color: #000000;
+    font-weight: 800;
+    padding: 14px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    display: inline-block;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #E67200;
+    transform: translateY(-2px);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .pillars-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tech-highlight-box {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      font-size: 1.75rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .content-section {
+      padding: 30px 16px;
+    }
+
+    .pillar-card {
+      padding: 24px 18px;
+    }
+
+    .featured-image-wrapper {
+      max-height: 300px;
+    }
+  }
+</style>
