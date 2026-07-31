@@ -10,5 +10,6 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
+  site: 'https://uncutelecmech.co.za',
   integrations: [sitemap()]
 });

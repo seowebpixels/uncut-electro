@@ -20,6 +20,9 @@ const { title = "UNCUT ELECTRO-MECHANICAL ENGINEERING", description } = Astro.pr
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
 
+    <!-- Accepts page-specific SEO, Canonical, Open Graph, & JSON-LD Schema tags -->
+    <slot name="head" />
+
     <style is:global>
       /* Global site resets and defaults */
       * {

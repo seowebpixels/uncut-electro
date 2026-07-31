@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://uncut-electro.pages.dev/sitemap-index.xml
