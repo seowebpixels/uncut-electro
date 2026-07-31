@@ -307,7 +307,7 @@ import Footer from '../components/Footer.astro';
   /* 2-Column Layout Grid */
   .contact-grid {
     display: grid;
-    grid-template-columns: 4.5fr 7.5fr;
+    grid-template-columns: 5fr 7fr; /* Expanded left column for breathing room */
     gap: 32px;
     align-items: start;
   }
@@ -356,14 +356,15 @@ import Footer from '../components/Footer.astro';
   .contact-person {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
   }
 
   .person-name {
     color: #FFFFFF;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .contact-link {
@@ -371,6 +372,8 @@ import Footer from '../components/Footer.astro';
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
+    white-space: nowrap; /* Prevents number from wrapping */
+    flex-shrink: 0;      /* Prevents flexbox from squeezing the number */
     transition: color 0.2s ease;
   }
 
