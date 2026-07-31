@@ -231,18 +231,24 @@ import Footer from '../components/Footer.astro';
 
   <!-- AJAX Form Processing Script -->
   <script is:inline>
-    const form = document.getElementById('contactForm');
-    const submitBtn = document.getElementById('submitBtn');
-    const btnText = document.getElementById('btnText');
-    const formStatus = document.getElementById('formStatus');
-    const successMessage = document.getElementById('successMessage');
-    const formHeading = document.getElementById('formHeading');
-    const formSubheading = document.getElementById('formSubheading');
-    const resetFormBtn = document.getElementById('resetFormBtn');
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('contactForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const btnText = document.getElementById('btnText');
+      const formStatus = document.getElementById('formStatus');
+      const successMessage = document.getElementById('successMessage');
+      const formHeading = document.getElementById('formHeading');
+      const formSubheading = document.getElementById('formSubheading');
+      const resetFormBtn = document.getElementById('resetFormBtn');
 
-    if (form) {
+      if (!form) {
+        console.error('Uncut Contact Form error: #contactForm element not found in DOM.');
+        return;
+      }
+
       form.addEventListener('submit', function(e) {
         e.preventDefault();
+        console.log('Submit event intercepted. Sending data to Web3Forms...');
 
         // UI Loading state
         submitBtn.disabled = true;
@@ -257,8 +263,9 @@ import Footer from '../components/Footer.astro';
         })
         .then(async (response) => {
           let json = await response.json();
-          if (response.status === 200) {
-            // Hide form and headers, display custom success card
+          console.log('Web3Forms Server Response:', json);
+
+          if (response.status === 200 && json.success) {
             form.style.display = 'none';
             if (formHeading) formHeading.style.display = 'none';
             if (formSubheading) formSubheading.style.display = 'none';
@@ -270,24 +277,25 @@ import Footer from '../components/Footer.astro';
           }
         })
         .catch(error => {
-          console.error(error);
+          console.error('Fetch error:', error);
           formStatus.style.display = 'block';
           formStatus.textContent = 'Network connectivity issue. Please try again or call 079 505 9510 directly.';
         })
-        .then(function() {
+        .finally(() => {
           submitBtn.disabled = false;
           btnText.textContent = 'Submit Request →';
         });
       });
 
-      // Allow sending another inquiry
-      resetFormBtn.addEventListener('click', function() {
-        successMessage.style.display = 'none';
-        form.style.display = 'flex';
-        if (formHeading) formHeading.style.display = 'block';
-        if (formSubheading) formSubheading.style.display = 'block';
-      });
-    }
+      if (resetFormBtn) {
+        resetFormBtn.addEventListener('click', function() {
+          successMessage.style.display = 'none';
+          form.style.display = 'flex';
+          if (formHeading) formHeading.style.display = 'block';
+          if (formSubheading) formSubheading.style.display = 'block';
+        });
+      }
+    });
   </script>
 
 </body>
