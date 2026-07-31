@@ -33,6 +33,12 @@ const services = [
   }
 ];
 
+const featuredSolar = {
+  title: "Design & Installation of Photovoltaic (Solar) Systems",
+  desc: "Complete turnkey commercial and industrial solar PV solutions. We engineer, install, and integrate custom grid-tied and hybrid photovoltaic systems seamlessly with your existing substation and switchgear infrastructure.",
+  image: "/photovoltaic-systems.avif"
+};
+
 const capabilities = [
   { title: "Industrial Wiring", desc: "Heavy-duty electrical installations and upgrades for manufacturing plants." },
   { title: "Power Systems Analysis", desc: "Diagnostic assessments to optimize energy flow and prevent unexpected downtime." },
@@ -46,7 +52,7 @@ const capabilities = [
     <h2>Our Core Services</h2>
     <p class="section-subtitle">Precision engineering solutions designed for heavy industry and critical power infrastructure.</p>
 
-    <!-- 3x2 Desktop / 2x3 Mobile Grid for Core Services -->
+    <!-- 3x2 Desktop / 2x3 Mobile Grid for Core Services + Full-Width Solar Spanner -->
     <div class="services-grid">
       {services.map(service => (
         <div class="service-card" tabindex="0">
@@ -66,6 +72,25 @@ const capabilities = [
           </div>
         </div>
       ))}
+
+      <!-- 7th Service: Full-Width Featured Solar Card (Matches Desktop Mockup Layout) -->
+      <div class="service-card featured-solar-card" tabindex="0">
+        <div class="solar-image-wrapper">
+          <img 
+            src={featuredSolar.image} 
+            alt={featuredSolar.title} 
+            width="800" 
+            height="600"
+            loading="lazy"
+            class="solar-img"
+          />
+        </div>
+        <div class="solar-content">
+          <span class="solar-badge">FEATURED CAPABILITY</span>
+          <h3>{featuredSolar.title}</h3>
+          <p>{featuredSolar.desc}</p>
+        </div>
+      </div>
     </div>
 
     <!-- Additional Capabilities Bullet List Section -->
@@ -85,7 +110,7 @@ const capabilities = [
 <script>
   // Adds interactive click listeners for both service cards and additional capabilities box
   document.addEventListener('DOMContentLoaded', () => {
-    // Core services cards click logic
+    // Core services cards click logic (includes solar card)
     document.querySelectorAll('.service-card').forEach(card => {
       card.addEventListener('click', () => {
         document.querySelectorAll('.service-card').forEach(c => c.classList.remove('is-clicked'));
@@ -195,6 +220,62 @@ const capabilities = [
     line-height: 1.5;
   }
 
+  /* -------------------------------------------------- */
+  /* FEATURED ITEM #7: SOLAR PV BANNER (SPANNING ROW)   */
+  /* -------------------------------------------------- */
+  .featured-solar-card {
+    grid-column: 1 / -1; /* Spans across all desktop grid columns */
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* ~33% image on left, ~67% copy on right */
+    align-items: stretch;
+    background-color: #222222;
+  }
+
+  .solar-image-wrapper {
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+    overflow: hidden;
+  }
+
+  .solar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .solar-content {
+    padding: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .solar-badge {
+    color: #FF7F00;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .solar-content h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #ffffff;
+  }
+
+  .solar-content p {
+    color: #cccccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
   /* Additional Capabilities Section Style */
   .additional-capabilities {
     background-color: #222222;
@@ -238,7 +319,7 @@ const capabilities = [
     color: #ffffff;
   }
 
-  /* Mobile Grid: 2 columns x 3 rows */
+  /* Mobile Grid: 2 columns + Full-Width Solar Card */
   @media (max-width: 768px) {
     .services-container h2 {
       font-size: 1.4rem;
@@ -263,6 +344,28 @@ const capabilities = [
     }
 
     .service-card p {
+      font-size: 0.8rem;
+    }
+
+    /* Mobile Featured Solar Layout */
+    .featured-solar-card {
+      grid-column: 1 / -1;
+      grid-template-columns: 1fr; /* Stacks image on top, text below */
+    }
+
+    .solar-image-wrapper {
+      height: 160px;
+    }
+
+    .solar-content {
+      padding: 1.25rem;
+    }
+
+    .solar-content h3 {
+      font-size: 1.05rem;
+    }
+
+    .solar-content p {
       font-size: 0.8rem;
     }
 
