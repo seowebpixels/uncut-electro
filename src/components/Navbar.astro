@@ -47,7 +47,7 @@
         <li><a href="/industries">Industries</a></li>
 
         <li><a href="/about">About Us</a></li>
-        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/#faq">FAQ</a></li>
       </ul>
     </nav>
 
@@ -60,18 +60,6 @@
 
   </div>
 </header>
-
-<script>
-  const mobileToggle = document.getElementById('mobile-toggle');
-  const mainNav = document.getElementById('main-nav');
-
-  if (mobileToggle && mainNav) {
-    mobileToggle.addEventListener('click', () => {
-      mainNav.classList.toggle('is-open');
-      mobileToggle.classList.toggle('is-active');
-    });
-  }
-</script>
 
 <style>
   /* Header Base Styling */
@@ -293,30 +281,56 @@
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Intercept all links starting with "/#"
-    const homeAnchorLinks = document.querySelectorAll('a[href^="/#"]');
+  function initNavbar() {
+    // 1. Mobile Menu Toggle Setup
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mainNav = document.getElementById('main-nav');
+
+    if (mobileToggle && mainNav) {
+      mobileToggle.onclick = () => {
+        mainNav.classList.toggle('is-open');
+        mobileToggle.classList.toggle('is-active');
+      };
+    }
+
+    // 2. Anchor Link Smooth Scrolling (Handles home links like "/#faq" or "/#services")
+    const homeAnchorLinks = document.querySelectorAll('a[href*="/#"]');
 
     homeAnchorLinks.forEach((link) => {
       link.addEventListener('click', (e) => {
-        const isHomePage = window.location.pathname === '/' || window.location.pathname === '';
-        
+        const currentPath = window.location.pathname.replace(/\/$/, '');
+        const isHomePage = currentPath === '';
+
         if (isHomePage) {
           const href = link.getAttribute('href');
-          const targetId = href.replace('/#', '');
+          if (!href || !href.includes('#')) return;
+
+          const targetId = href.split('#')[1];
           const targetElement = document.getElementById(targetId);
 
           if (targetElement) {
             e.preventDefault();
-            
-            // Smoothly scroll to the target section
+
+            // Auto-close mobile menu if open
+            if (mainNav && mainNav.classList.contains('is-open')) {
+              mainNav.classList.remove('is-open');
+              if (mobileToggle) mobileToggle.classList.remove('is-active');
+            }
+
+            // Smoothly scroll directly to the section
             targetElement.scrollIntoView({ behavior: 'smooth' });
 
-            // Update URL hash without forcing a page reload
+            // Update URL bar anchor without page reload
             history.pushState(null, '', `#${targetId}`);
           }
         }
       });
     });
-  });
+  }
+
+  // Execute immediately on script execution
+  initNavbar();
+
+  // Re-run if using Astro View Transitions
+  document.addEventListener('astro:page-load', initNavbar);
 </script>
