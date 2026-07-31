@@ -8,6 +8,84 @@ import FAQ from '../components/FAQ.astro';
 ---
 
 <BaseLayout>
+  <!-- Live Domain SEO & Open Graph Meta Tags -->
+  <link rel="canonical" href="https://uncutelecmech.co.za/" slot="head" />
+  <meta property="og:type" content="website" slot="head" />
+  <meta property="og:url" content="https://uncutelecmech.co.za/" slot="head" />
+  <meta property="og:title" content="Uncut Electro Mechanical Engineering | 24/7 Breakdown & Workshop Services" slot="head" />
+  <meta property="og:description" content="24/7 emergency breakdown response & workshop services across South Africa. Specialists in AC/DC motor rewinding, transformers, switchgear, and commercial solar." slot="head" />
+  <meta property="og:image" content="https://uncutelecmech.co.za/uncut-logo-new.avif" slot="head" />
+
+  <!-- LocalBusiness JSON-LD Structured Data Schema -->
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Uncut Electro Mechanical Engineering",
+    "image": "https://uncutelecmech.co.za/uncut-logo-new.avif",
+    "url": "https://uncutelecmech.co.za/",
+    "telephone": "+27795059510",
+    "email": "service@uncutelecmech.co.za",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "30 Van Eck Street",
+      "addressLocality": "Chamdor, Krugersdorp",
+      "postalCode": "1754",
+      "addressCountry": "ZA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -26.150334525707244,
+      "longitude": 27.802733395634785
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "07:30",
+        "closes": "16:30"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    ],
+    "areaServed": [
+      { "@type": "Country", "name": "South Africa" },
+      { "@type": "AdministrativeArea", "name": "Eastern Cape" },
+      { "@type": "AdministrativeArea", "name": "Free State" },
+      { "@type": "AdministrativeArea", "name": "Gauteng" },
+      { "@type": "AdministrativeArea", "name": "KwaZulu-Natal" },
+      { "@type": "AdministrativeArea", "name": "Limpopo" },
+      { "@type": "AdministrativeArea", "name": "Mpumalanga" },
+      { "@type": "AdministrativeArea", "name": "Northern Cape" },
+      { "@type": "AdministrativeArea", "name": "North West" },
+      { "@type": "AdministrativeArea", "name": "Western Cape" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Engineering & Emergency Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "24/7 Emergency Breakdown Response" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Solar & PV Systems" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AC/DC Motor Rewinding & Repairs" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Substation & Switchgear Maintenance" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Transformer & Generator Overhauls" } }
+      ]
+    }
+  }
+  </script>
+
   <main>
     <Hero />
     <Services />
