@@ -291,3 +291,32 @@
     }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Intercept all links starting with "/#"
+    const homeAnchorLinks = document.querySelectorAll('a[href^="/#"]');
+
+    homeAnchorLinks.forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const isHomePage = window.location.pathname === '/' || window.location.pathname === '';
+        
+        if (isHomePage) {
+          const href = link.getAttribute('href');
+          const targetId = href.replace('/#', '');
+          const targetElement = document.getElementById(targetId);
+
+          if (targetElement) {
+            e.preventDefault();
+            
+            // Smoothly scroll to the target section
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+
+            // Update URL hash without forcing a page reload
+            history.pushState(null, '', `#${targetId}`);
+          }
+        }
+      });
+    });
+  });
+</script>
