@@ -9,7 +9,10 @@ interface Props {
   description?: string;
 }
 
-const { title = "UNCUT ELECTRO-MECHANICAL ENGINEERING", description } = Astro.props;
+const { 
+  title = "UNCUT ELECTRO-MECHANICAL ENGINEERING", 
+  description = "Uncut Electro-Mechanical Engineering provides expert precision engineering, electro-mechanical repairs, and industrial machinery maintenance in Krugersdorp & Chamdor." 
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -18,7 +21,7 @@ const { title = "UNCUT ELECTRO-MECHANICAL ENGINEERING", description } = Astro.pr
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    {description && <meta name="description" content={description} />}
+    <meta name="description" content={description} />
 
     <!-- Accepts page-specific SEO, Canonical, Open Graph, & JSON-LD Schema tags -->
     <slot name="head" />
