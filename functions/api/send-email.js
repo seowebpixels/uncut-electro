@@ -3,7 +3,6 @@ export async function onRequestPost(context) {
     const body = await context.request.json();
     const { name, email, phone, message } = body;
 
-    // Retrieve API key from Cloudflare Environment Variables or fallback string
     const apiKey = context.env.RESEND_API_KEY || 're_YOUR_RESEND_API_KEY';
 
     const resendResponse = await fetch('https://api.resend.com/emails', {
@@ -13,8 +12,9 @@ export async function onRequestPost(context) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Uncut Web <service@uncutelecmech.co.za>', // Replace with your verified domain sender if configured
+        from: 'Uncut Web Form <noreply@uncutelecmech.co.za>',
         to: ['service@uncutelecmech.co.za'],
+        replyTo: email,
         subject: `New Breakdown / Contact Inquiry from ${name}`,
         html: `
           <h3>New Emergency Breakdown / Contact Inquiry</h3>
@@ -35,7 +35,7 @@ export async function onRequestPost(context) {
       });
     } else {
       const errorData = await resendResponse.json();
-      return new Response(JSON.stringify({ success: false, error: errorData.message || 'Resend API error' }), {
+      return new Response(JSON.stringify({ success: false, error: errorData.message }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
       });
