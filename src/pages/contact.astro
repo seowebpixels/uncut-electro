@@ -100,13 +100,6 @@ import Footer from '../components/Footer.astro';
 
             <form class="rfq-form" id="contactForm">
               
-              <!-- WEB3FORMS HIDDEN CONFIGURATION -->
-              <input type="hidden" name="access_key" value="d868911a-fb06-453b-a591-734d461a57cb" />
-              <input type="hidden" name="subject" value="New Website RFQ / Inquiry - Uncut Electro Mechanical" />
-              <input type="hidden" name="from_name" value="Uncut Website Notification" />
-              <!-- Honeypot Spam Protection (Hidden from human visitors) -->
-              <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
-
               <!-- Contact Details -->
               <div class="form-row">
                 <div class="form-field">
@@ -171,13 +164,6 @@ import Footer from '../components/Footer.astro';
                 ></textarea>
               </div>
 
-              <!-- Optional File Upload -->
-              <div class="form-field full-width">
-                <label for="attachment">Attach Specs / RFQ Document (Optional)</label>
-                <input type="file" id="attachment" name="attachment" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg" class="file-input" />
-                <span class="file-hint">Accepted formats: PDF, DOCX, JPG, PNG (Max 10MB)</span>
-              </div>
-
               <!-- POPIA Consent Notice -->
               <p class="popia-notice">
                 🔒 By submitting this form, you consent to Uncut Electro Mechanical Engineering processing your contact details solely for the purpose of responding to your inquiry in accordance with POPIA.
@@ -191,7 +177,7 @@ import Footer from '../components/Footer.astro';
 
             </form>
 
-            <!-- Custom Success Display Card (Revealed via JS) -->
+            <!-- Custom Success Display Card -->
             <div id="successMessage" class="success-card" style="display: none;">
               <div class="success-icon">⚡</div>
               <h2>Inquiry Logged Successfully!</h2>
@@ -248,7 +234,6 @@ import Footer from '../components/Footer.astro';
 
       form.addEventListener('submit', function(e) {
         e.preventDefault();
-        console.log('Submit event intercepted. Sending data to Web3Forms...');
 
         // UI Loading state
         submitBtn.disabled = true;
@@ -257,15 +242,25 @@ import Footer from '../components/Footer.astro';
 
         const formData = new FormData(form);
 
-        fetch('https://api.web3forms.com/submit', {
+        // Build structured message payload for Resend API endpoint
+        const payload = {
+          name: formData.get('name'),
+          email: formData.get('email'),
+          phone: formData.get('phone'),
+          message: `Company: ${formData.get('company')}\nService: ${formData.get('service')}\nUrgency: ${formData.get('urgency')}\n\nProject Details:\n${formData.get('details')}`
+        };
+
+        fetch('/api/send-email', {
           method: 'POST',
-          body: formData
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
         })
         .then(async (response) => {
           let json = await response.json();
-          console.log('Web3Forms Server Response:', json);
 
-          if (response.status === 200 && json.success) {
+          if (response.ok && json.success) {
             form.style.display = 'none';
             if (formHeading) formHeading.style.display = 'none';
             if (formSubheading) formSubheading.style.display = 'none';
@@ -273,7 +268,7 @@ import Footer from '../components/Footer.astro';
             form.reset();
           } else {
             formStatus.style.display = 'block';
-            formStatus.textContent = json.message || 'Submission failed. Please check details or call us directly.';
+            formStatus.textContent = json.error || 'Submission failed. Please check details or call us directly.';
           }
         })
         .catch(error => {
@@ -596,20 +591,6 @@ import Footer from '../components/Footer.astro';
   select option {
     background-color: #1a1a1a;
     color: #FFFFFF;
-  }
-
-  .file-input {
-    background-color: #242424;
-    padding: 10px;
-    border: 1px dashed #444444;
-    border-radius: 6px;
-    color: #CCCCCC;
-    font-size: 0.85rem;
-  }
-
-  .file-hint {
-    color: #888888;
-    font-size: 0.78rem;
   }
 
   .popia-notice {
