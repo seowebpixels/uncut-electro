@@ -14,7 +14,7 @@ export async function onRequestPost(context) {
       body: JSON.stringify({
         from: 'Uncut Web Form <noreply@uncutelecmech.co.za>',
         to: ['service@uncutelecmech.co.za'],
-        replyTo: email,
+        reply_to: email,
         subject: `New Breakdown / Contact Inquiry from ${name}`,
         html: `
           <h3>New Emergency Breakdown / Contact Inquiry</h3>
