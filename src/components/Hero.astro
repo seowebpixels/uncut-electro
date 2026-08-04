@@ -1,5 +1,8 @@
 ---
 // Hero.astro
+import { Image } from 'astro:assets';
+// Note: If your image in src/assets/images/ is named 'transformer.avif', update the filename below accordingly:
+import heroImg from '../assets/images/high-voltage-transformer.avif';
 ---
 
 <section 
@@ -37,16 +40,21 @@
             24/7 RAPID RESPONSE & CERTIFIED COMPLIANCE
           </h3>
           <p class="text-gray-300">
-            Licensed technicians deployed instantly across industrial sites to minimize downtime and eliminate electrical hazards.
+            Licensed technicians deployed instantly across industrial sites to eliminate electrical hazards and minimize downtime.
           </p>
         </div>
       </div>
 
       <!-- 2. Hero Image (MOBILE ONLY: Placed below text, above buttons) -->
       <div class="block md:hidden my-2 w-full flex justify-center">
-        <img 
-          src="/high-voltage-transformer.avif" 
+        <Image 
+          src={heroImg} 
           alt="High Voltage Transformer - Uncut Electro" 
+          width={450}
+          height={300}
+          quality={65}
+          format="avif"
+          loading="eager"
           class="rounded-lg shadow-2xl w-full max-w-sm object-cover" 
           style="border: 2px solid #FF7F00;"
         />
@@ -76,9 +84,14 @@
 
     <!-- Right Side Image (DESKTOP ONLY) -->
     <div class="hidden md:flex md:justify-center md:translate-x-[60px]">
-      <img 
-        src="/high-voltage-transformer.avif" 
+      <Image 
+        src={heroImg} 
         alt="High Voltage Transformer - Uncut Electro" 
+        width={600}
+        height={400}
+        quality={75}
+        format="avif"
+        loading="eager"
         class="rounded-lg shadow-2xl w-full max-w-lg object-cover" 
         style="border: 2px solid #FF7F00;"
       />
