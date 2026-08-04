@@ -13,7 +13,7 @@ export async function onRequestPost(context) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Uncut Web <onboarding@resend.dev>', // Replace with your verified domain sender if configured
+        from: 'Uncut Web <service@uncutelecmech.co.za>', // Replace with your verified domain sender if configured
         to: ['service@uncutelecmech.co.za'],
         subject: `New Breakdown / Contact Inquiry from ${name}`,
         html: `
