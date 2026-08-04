@@ -216,8 +216,8 @@ import Footer from '../components/Footer.astro';
   <Footer />
 
   <!-- AJAX Form Processing Script -->
-  <script is:inline>
-    document.addEventListener('DOMContentLoaded', function() {
+  <script>
+    const setupContactForm = () => {
       const form = document.getElementById('contactForm');
       const submitBtn = document.getElementById('submitBtn');
       const btnText = document.getElementById('btnText');
@@ -227,12 +227,9 @@ import Footer from '../components/Footer.astro';
       const formSubheading = document.getElementById('formSubheading');
       const resetFormBtn = document.getElementById('resetFormBtn');
 
-      if (!form) {
-        console.error('Uncut Contact Form error: #contactForm element not found in DOM.');
-        return;
-      }
+      if (!form) return;
 
-      form.addEventListener('submit', function(e) {
+      form.addEventListener('submit', async function(e) {
         e.preventDefault();
 
         // UI Loading state
@@ -250,15 +247,16 @@ import Footer from '../components/Footer.astro';
           message: `Company: ${formData.get('company')}\nService: ${formData.get('service')}\nUrgency: ${formData.get('urgency')}\n\nProject Details:\n${formData.get('details')}`
         };
 
-        fetch('/api/send-email', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(payload)
-        })
-        .then(async (response) => {
-          let json = await response.json();
+        try {
+          const response = await fetch('/api/send-email', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+          });
+
+          const json = await response.json();
 
           if (response.ok && json.success) {
             form.style.display = 'none';
@@ -270,16 +268,14 @@ import Footer from '../components/Footer.astro';
             formStatus.style.display = 'block';
             formStatus.textContent = json.error || 'Submission failed. Please check details or call us directly.';
           }
-        })
-        .catch(error => {
+        } catch (error) {
           console.error('Fetch error:', error);
           formStatus.style.display = 'block';
           formStatus.textContent = 'Network connectivity issue. Please try again or call 079 505 9510 directly.';
-        })
-        .finally(() => {
+        } finally {
           submitBtn.disabled = false;
           btnText.textContent = 'Submit Request →';
-        });
+        }
       });
 
       if (resetFormBtn) {
@@ -290,7 +286,10 @@ import Footer from '../components/Footer.astro';
           if (formSubheading) formSubheading.style.display = 'block';
         });
       }
-    });
+    };
+
+    // Run setup immediately
+    setupContactForm();
   </script>
 
 </body>
