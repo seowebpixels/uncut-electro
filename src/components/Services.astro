@@ -1,42 +1,52 @@
 ---
 // src/components/Services.astro
+import { Image } from 'astro:assets';
+
+import motorImg from '../assets/images/ac-dc-motor-rewinding.avif';
+import conditionImg from '../assets/images/condition-monitoring.avif';
+import generatorImg from '../assets/images/generator.avif';
+import substationImg from '../assets/images/substation.avif';
+import switchgearImg from '../assets/images/switchgear.avif';
+import transformerImg from '../assets/images/transformer.avif';
+import solarImg from '../assets/images/photovoltaic-systems.avif';
+
 const services = [
   { 
     title: "AC-DC Motor Rewinding", 
     desc: "Precision rebuilding, insulation upgrading, and testing for all industrial AC and DC motors.",
-    image: "/ac-dc-motor-rewinding.avif" 
+    image: motorImg 
   },
   { 
     title: "Condition Monitoring", 
     desc: "Advanced diagnostic testing and continuous tracking to predict equipment failure before it happens.",
-    image: "/condition-monitoring.avif" 
+    image: conditionImg 
   },
   { 
     title: "Diesel Generators", 
     desc: "Reliable installation, maintenance, and load testing for critical backup power generator sets.",
-    image: "/generator.avif" 
+    image: generatorImg 
   },
   { 
     title: "Substations", 
     desc: "Complete setup, transformer upkeep, and high-voltage infrastructure management.",
-    image: "/substation.avif" 
+    image: substationImg 
   },
   { 
     title: "Switchgears", 
     desc: "Routine servicing, retrofitting, and fault clearance for low- and high-voltage switchgear assemblies.",
-    image: "/switchgear.avif" 
+    image: switchgearImg 
   },
   { 
     title: "Transformers", 
     desc: "Expert testing, oil filtration, maintenance, and installation of power transformers.",
-    image: "/transformer.avif" 
+    image: transformerImg 
   }
 ];
 
 const featuredSolar = {
   title: "Design & Installation of Photovoltaic (Solar) Systems",
   desc: "Complete turnkey commercial and industrial solar PV solutions. We engineer, install, and integrate custom grid-tied and hybrid photovoltaic systems seamlessly with your existing substation and switchgear infrastructure.",
-  image: "/photovoltaic-systems.avif"
+  image: solarImg
 };
 
 const capabilities = [
@@ -57,11 +67,13 @@ const capabilities = [
       {services.map(service => (
         <div class="service-card" tabindex="0">
           <div class="card-image-wrapper">
-            <img 
+            <Image 
               src={service.image} 
               alt={service.title} 
-              width="800" 
-              height="600"
+              width={600} 
+              height={400}
+              quality={75}
+              format="avif"
               loading="lazy"
               class="service-img"
             />
@@ -76,11 +88,13 @@ const capabilities = [
       <!-- 7th Service: Full-Width Featured Solar Card (Matches Desktop Mockup Layout) -->
       <div class="service-card featured-solar-card" tabindex="0">
         <div class="solar-image-wrapper">
-          <img 
+          <Image 
             src={featuredSolar.image} 
             alt={featuredSolar.title} 
-            width="800" 
-            height="600"
+            width={800} 
+            height={500}
+            quality={75}
+            format="avif"
             loading="lazy"
             class="solar-img"
           />
@@ -359,7 +373,7 @@ const capabilities = [
 
     .solar-content {
       padding: 1.25rem;
-    }
+    
 
     .solar-content h3 {
       font-size: 1.05rem;
