@@ -9,7 +9,7 @@ export async function onRequestPost(context) {
     const senderName = name ? name.trim() : 'Website Visitor';
 
     const payload = {
-      sender: { name: 'Uncut Web Form', email: 'form@uncutelecmech.co.za' },
+      sender: { name: 'Uncut Web Form', email: 'service@uncutelecmech.co.za' },
       to: [{ email: 'service@uncutelecmech.co.za' }],
       subject: `Website Inquiry: ${senderName}`,
       textContent: `Website Inquiry\nName: ${senderName}\nEmail: ${email || 'N/A'}\nPhone: ${phone || 'N/A'}\n\nMessage:\n${message || 'N/A'}`,
