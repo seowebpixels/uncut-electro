@@ -20,8 +20,8 @@ ${message || 'N/A'}
     `.trim();
 
     const payload = {
-      from: 'Uncut Web Form <form@uncutelecmech.co.za>',
-      to: ['service@uncutelecmech.co.za'],
+      from: 'Uncut Web Form <onboarding@resend.dev>',
+      to: ['marlan_p@yahoo.com'],
       subject: `Website Inquiry: ${senderName}`,
       text: plainTextMessage,
       html: `
