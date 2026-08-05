@@ -8,24 +8,14 @@ export async function onRequestPost(context) {
     const isValidEmail = (addr) => typeof addr === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(addr.trim());
 
     const senderName = name ? name.trim() : 'Website Visitor';
-    const plainTextMessage = `
-Website Contact Inquiry
-
-Name: ${senderName}
-Email: ${email || 'N/A'}
-Phone: ${phone || 'N/A'}
-
-Message:
-${message || 'N/A'}
-    `.trim();
 
     const payload = {
-      from: 'Uncut Web Form <onboarding@resend.dev>',
-      to: ['marlan_p@yahoo.com'],
+      from: 'Uncut Web Form <form@uncutelecmech.co.za>',
+      to: ['service@uncutelecmech.co.za'],
       subject: `Website Inquiry: ${senderName}`,
-      text: plainTextMessage,
+      text: `Website Inquiry\nName: ${senderName}\nEmail: ${email || 'N/A'}\nPhone: ${phone || 'N/A'}\n\nMessage:\n${message || 'N/A'}`,
       html: `
-        <h2>Website Contact Inquiry</h2>
+        <h3>Website Inquiry</h3>
         <p><strong>Name:</strong> ${senderName}</p>
         <p><strong>Email:</strong> ${email || 'N/A'}</p>
         <p><strong>Phone:</strong> ${phone || 'N/A'}</p>
@@ -48,14 +38,15 @@ ${message || 'N/A'}
       body: JSON.stringify(payload),
     });
 
+    const resendData = await resendResponse.json();
+
     if (resendResponse.ok) {
-      return new Response(JSON.stringify({ success: true }), {
+      return new Response(JSON.stringify({ success: true, data: resendData }), {
         status: 200,
         headers: { 'Content-Type': 'application/json' },
       });
     } else {
-      const errorData = await resendResponse.json();
-      return new Response(JSON.stringify({ success: false, error: errorData }), {
+      return new Response(JSON.stringify({ success: false, error: resendData }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
       });
