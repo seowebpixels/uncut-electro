@@ -5,13 +5,24 @@ export async function onRequestPost(context) {
 
     const apiKey = context.env.RESEND_API_KEY;
 
-    // Simple email format validation regex
     const isValidEmail = (addr) => typeof addr === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(addr.trim());
+
+    const plainTextMessage = `
+New Emergency Breakdown / Contact Inquiry
+
+Name: ${name || 'N/A'}
+Email: ${email || 'N/A'}
+Phone: ${phone || 'N/A'}
+
+Details:
+${message || 'N/A'}
+    `.trim();
 
     const payload = {
       from: 'Uncut Web Form <noreply@uncutelecmech.co.za>',
       to: ['service@uncutelecmech.co.za'],
       subject: `New Breakdown / Contact Inquiry from ${name || 'Website Visitor'}`,
+      text: plainTextMessage,
       html: `
         <h3>New Emergency Breakdown / Contact Inquiry</h3>
         <p><strong>Name:</strong> ${name || 'N/A'}</p>
@@ -23,7 +34,6 @@ export async function onRequestPost(context) {
       `,
     };
 
-    // Only set reply_to if the user provided a validly formatted email address
     if (isValidEmail(email)) {
       payload.reply_to = [email.trim()];
     }
