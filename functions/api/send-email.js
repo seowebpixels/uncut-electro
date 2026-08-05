@@ -3,18 +3,17 @@ export async function onRequestPost(context) {
     const body = await context.request.json();
     const { name, email, phone, message } = body;
 
-    const apiKey = context.env.RESEND_API_KEY;
+    const apiKey = context.env.BREVO_API_KEY;
 
     const isValidEmail = (addr) => typeof addr === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(addr.trim());
-
     const senderName = name ? name.trim() : 'Website Visitor';
 
     const payload = {
-      from: 'Uncut Web Form <form@uncutelecmech.co.za>',
-      to: ['service@uncutelecmech.co.za'],
+      sender: { name: 'Uncut Web Form', email: 'form@uncutelecmech.co.za' },
+      to: [{ email: 'service@uncutelecmech.co.za' }],
       subject: `Website Inquiry: ${senderName}`,
-      text: `Website Inquiry\nName: ${senderName}\nEmail: ${email || 'N/A'}\nPhone: ${phone || 'N/A'}\n\nMessage:\n${message || 'N/A'}`,
-      html: `
+      textContent: `Website Inquiry\nName: ${senderName}\nEmail: ${email || 'N/A'}\nPhone: ${phone || 'N/A'}\n\nMessage:\n${message || 'N/A'}`,
+      htmlContent: `
         <h3>Website Inquiry</h3>
         <p><strong>Name:</strong> ${senderName}</p>
         <p><strong>Email:</strong> ${email || 'N/A'}</p>
@@ -26,27 +25,28 @@ export async function onRequestPost(context) {
     };
 
     if (isValidEmail(email)) {
-      payload.reply_to = [email.trim()];
+      payload.replyTo = { email: email.trim() };
     }
 
-    const resendResponse = await fetch('https://api.resend.com/emails', {
+    const brevoResponse = await fetch('https://api.brevo.com/v3/smtp/email', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${apiKey}`,
+        'api-key': apiKey,
         'Content-Type': 'application/json',
+        'accept': 'application/json',
       },
       body: JSON.stringify(payload),
     });
 
-    const resendData = await resendResponse.json();
+    const brevoData = await brevoResponse.json();
 
-    if (resendResponse.ok) {
-      return new Response(JSON.stringify({ success: true, data: resendData }), {
+    if (brevoResponse.ok) {
+      return new Response(JSON.stringify({ success: true, data: brevoData }), {
         status: 200,
         headers: { 'Content-Type': 'application/json' },
       });
     } else {
-      return new Response(JSON.stringify({ success: false, error: resendData }), {
+      return new Response(JSON.stringify({ success: false, error: brevoData }), {
         status: 400,
         headers: { 'Content-Type': 'application/json' },
       });
