@@ -5,6 +5,9 @@ export async function onRequestPost(context) {
 
     const apiKey = context.env.RESEND_API_KEY;
 
+    // Simple email format validation regex
+    const isValidEmail = (addr) => typeof addr === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(addr.trim());
+
     const payload = {
       from: 'Uncut Web Form <noreply@uncutelecmech.co.za>',
       to: ['service@uncutelecmech.co.za'],
@@ -20,8 +23,9 @@ export async function onRequestPost(context) {
       `,
     };
 
-    if (email) {
-      payload.reply_to = [email];
+    // Only set reply_to if the user provided a validly formatted email address
+    if (isValidEmail(email)) {
+      payload.reply_to = [email.trim()];
     }
 
     const resendResponse = await fetch('https://api.resend.com/emails', {
