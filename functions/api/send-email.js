@@ -19,7 +19,7 @@ ${message || 'N/A'}
     `.trim();
 
     const payload = {
-      from: 'Uncut Web Form <noreply@uncutelecmech.co.za>',
+      from: 'Uncut Web Form <form@uncutelecmech.co.za>',
       to: ['service@uncutelecmech.co.za'],
       subject: `New Breakdown / Contact Inquiry from ${name || 'Website Visitor'}`,
       text: plainTextMessage,
