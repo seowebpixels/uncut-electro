@@ -7,29 +7,30 @@ export async function onRequestPost(context) {
 
     const isValidEmail = (addr) => typeof addr === 'string' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(addr.trim());
 
+    const senderName = name ? name.trim() : 'Website Visitor';
     const plainTextMessage = `
-New Emergency Breakdown / Contact Inquiry
+Website Contact Inquiry
 
-Name: ${name || 'N/A'}
+Name: ${senderName}
 Email: ${email || 'N/A'}
 Phone: ${phone || 'N/A'}
 
-Details:
+Message:
 ${message || 'N/A'}
     `.trim();
 
     const payload = {
       from: 'Uncut Web Form <form@uncutelecmech.co.za>',
       to: ['service@uncutelecmech.co.za'],
-      subject: `New Breakdown / Contact Inquiry from ${name || 'Website Visitor'}`,
+      subject: `Website Inquiry: ${senderName}`,
       text: plainTextMessage,
       html: `
-        <h3>New Emergency Breakdown / Contact Inquiry</h3>
-        <p><strong>Name:</strong> ${name || 'N/A'}</p>
+        <h2>Website Contact Inquiry</h2>
+        <p><strong>Name:</strong> ${senderName}</p>
         <p><strong>Email:</strong> ${email || 'N/A'}</p>
         <p><strong>Phone:</strong> ${phone || 'N/A'}</p>
         <hr />
-        <p><strong>Details:</strong></p>
+        <p><strong>Message:</strong></p>
         <p>${(message || '').replace(/\n/g, '<br/>')}</p>
       `,
     };
