@@ -6,7 +6,7 @@ export async function onRequestPost(context) {
     const apiKey = context.env.RESEND_API_KEY;
 
     const payload = {
-      from: 'Uncut Web Form <noreply@send.uncutelecmech.co.za>',
+      from: 'Uncut Web Form <noreply@uncutelecmech.co.za>',
       to: ['service@uncutelecmech.co.za'],
       subject: `New Breakdown / Contact Inquiry from ${name || 'Website Visitor'}`,
       html: `
